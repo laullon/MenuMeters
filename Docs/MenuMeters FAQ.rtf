@@ -1,0 +1,107 @@
+{\rtf1\ansi\ansicpg1252\cocoartf949\cocoasubrtf540
+\readonlydoc1{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+{\colortbl;\red255\green255\blue255;}
+\vieww12220\viewh8620\viewkind0
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\ql\qnatural
+
+\f0\b\fs48 \cf0 MenuMeters FAQ\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ql\qnatural
+
+\b0\fs22 \cf0 Version 1.4, Copyright \'a9 2002-2009 Alex Harper (basilisk@foobox.net)\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ql\qnatural
+
+\b\fs28 \cf0 \
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ql\qnatural
+{\field{\*\fldinst{HYPERLINK "http://www.ragingmenace.com"}}{\fldrslt \cf0 http://www.ragingmenace.com}}\
+\
+Contents:\
+\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\li720\fi-720\ql\qnatural
+
+\fs24 \cf0 \'95 This is a hack! Its using undocumented Apple APIs! Aren't you behaving badly?\
+\'95 How can I uninstall MenuMeters?\
+\'95 MenuMeters tells me that "Menu Extra Could Not Load." What should I do? \
+\'95 How do I tell how much CPU time MenuMeters itself is using? How can I decrease its CPU usage?\
+\'95 The Net Meter shows interfaces I never use. How do I disable them?\
+\'95 Open source?\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ql\qnatural
+
+\b0 \cf0 \
+\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ql\qnatural
+
+\b \cf0 Q:	
+\b0 This is a hack! Its using undocumented Apple APIs! Aren't you behaving badly?
+\b \
+\
+A:	
+\b0 Guilty as charged. Its important to note, however, that the 
+\b only
+\b0  undocumented API used in MenuMeters is the menu extra API itself. The routines used to gather the resource information (host_statistics, sysctl, and IOKit) are all documented.\
+\
+As for the menu extra API itself... I think the benefits outweigh the risk. Certainly it is possible for a misbehaving menu extra to crash the SystemUIServer. Since SystemUIServer restarts itself, a crash is not the end of the world. Hopefully in some future system release Apple will introduce an public API that is comparable to the menu extra API. I'll happily port to that API when that day comes. In the meantime I wrote what I wanted. That said, if you are the kind of person who avoids all software that goes outside the Apple guidelines, then MenuMeters is not for you. Numerous alternatives exist, and a search on any Macintosh software site should be your next step.\
+\
+\
+
+\b Q:	
+\b0 How can I uninstall MenuMeters?
+\b \
+\
+A:	
+\b0 If you want to remove MenuMeters from your system you can use the MenuMeters installer's "Uninstall" button to automatically remove the software. Alternately you can delete the "MenuMeters.prefPane" file manually. Once uninstalled you must logout and relogin to complete the removal of MenuMeters from your system.\
+\
+\
+
+\b Q:	
+\b0 MenuMeters tells me that "Menu Extra Could Not Load." What should I do?
+\b \
+\
+A:	
+\b0 This message is an indication that your system has a conflict with the MenuCracker tool bundled with MenuMeters. Consider trying Unsanity's Menu Extra Enabler ({\field{\*\fldinst{HYPERLINK "http://www.unsanity.com/"}}{\fldrslt http://www.unsanity.com/}}) in place of MenuCracker.\
+\
+For further discussion of this issue please see the MenuMeters Read Me file.\
+\
+\
+
+\b Q:	
+\b0 How do I tell how much CPU time MenuMeters itself is using? How can I decrease its CPU usage?\
+\
+
+\b A:	
+\b0 The MenuMeters are plugins to SystemUIServer, and hence their CPU usage is counted into SystemUIServer's total CPU usage. To check MenuMeters CPU time use the terminal 'top' program or the Activity Monitor application to check SystemUIServer's CPU usage. I recommend using 'top -s 60' to get a wider (and thus more accurate) sample. Note that 
+\b all
+\b0  SystemUIServer plugins are counted in this total (clock, iSync, iChat, etc. etc.) so not just MenuMeters is responsible. To get an accurate read on MenuMeters alone turn off all the MenuMeters and check SystemUIServer's usage (typically about 1-2% spiking to 5%) then turn on the MenuMeters you use and check SystemUIServer again.
+\b \
+\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ql\qnatural
+
+\b0 \cf0 By its nature MenuMeters must poll the system periodically to gather data. This process uses a moderate amount of CPU time, and the actual process of drawing the graphics uses a lot more. In fairness MenuMeters at its default settings uses about the same CPU time on my development machine than the four utilities it replaced (and it does more). I expect that on most machines MenuMeters will add about 1-2% more CPU usage to SystemUIServer on average, with occasional spikes as much as 5-10%. Using a wider sample size in top will help to give a more general average so the spikes may not be visible.\
+\
+Here are some things you can do to reduce the CPU usage of MenuMeters:\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\li1080\fi-1080\ql\qnatural
+\cf0 \'95	Turn off meters you don't use.\
+\'95	Increase the time between updates. This will significantly improve performance, at the cost of the "live" view of the system. However, the statistics gathered by MenuMeters are cumulative, meaning that slower updates does not result in lost information.\
+\'95	Turn off text displays. Mac OS X's beautiful text comes at a fairly high cost. Rendering the memory and network text displays can dramatically increase MenuMeter's CPU usage compare to just displaying the graphs. The exception to this rule is the CPU percentage display, which, because it covers a limited range (0% - 100%), allows for prerendered text.\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ql\qnatural
+\cf0 \
+\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ql\qnatural
+
+\b \cf0 Q:	
+\b0 The Net Meter shows interfaces I never use. How do I disable them?\
+\
+
+\b A:	
+\b0 Network interfaces are reported on the basis of the SystemConfiguration framework. To prevent interfaces from showing in the list you must disable the interface in the Apple Network preference panel.\
+\
+\
+
+\b Q:	
+\b0 Open source?\
+\
+
+\b A:	
+\b0 MenuMeters is released under the GNU General Public License (GPL) version 2. This makes it both "free" as in beer and "free" as in speech, for those who partition the world using that terminology (I am not one of them). MenuMeters is open source mostly because there isn't a good reason for it not to be, except, perhaps, saving myself the embarrassment of having others look at my first C code from a long time ago.\
+\
+Although it uses none of their code directly, MenuMeters wouldn't exist without the projects of others released as open source under a variety of licenses like the GPL, APSL, and Artistic License (see "Thanks" section of the MenuMeters Read Me for some credits).\
+}

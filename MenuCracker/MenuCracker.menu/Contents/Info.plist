@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CFBundleExecutable</key>
+	<string>MenuCracker</string>
+	<key>CFBundleGetInfoString</key>
+	<string>MenuCracker 2.0 © 2009 Alex Harper</string>
+	<key>CFBundleIconFile</key>
+	<string>MenuCracker.icns</string>
+	<key>CFBundleIdentifier</key>
+	<string>net.sourceforge.menucracker.two</string>
+	<key>CFBundleInfoDictionaryVersion</key>
+	<string>6.0</string>
+	<key>CFBundleName</key>
+	<string>MenuCracker</string>
+	<key>CFBundlePackageType</key>
+	<string>BNDL</string>
+	<key>CFBundleSignature</key>
+	<string>????</string>
+	<key>CFBundleVersion</key>
+	<string>2.0</string>
+	<key>NSMenuExtraWidth</key>
+	<integer>0</integer>
+	<key>NSPrincipalClass</key>
+	<string>AppleClassicExtra</string>
+</dict>
+</plist>
