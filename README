@@ -1,0 +1,118 @@
+MenuMeters
+Version 1.4, Copyright © 2002-2009 Alex Harper (basilisk@foobox.net)
+
+http://www.ragingmenace.com
+
+Contents:
+
+• Introduction
+• How to install
+• How to uninstall
+• MenuCracker and MenuExtras
+• Known Issues
+• Legal / License
+• Contact the Author / Donations
+• Thanks
+
+
+Introduction
+
+MenuMeters is a set of CPU, memory, disk, and network monitoring tools for Mac OS X. Although there are numerous other programs which do the same thing, none had quite the feature set I was looking for. Most were windows that sat in a corner or on the desktop, which are inevitably obscured by document windows on a PowerBook's small screen. Those monitors which used the menubar mostly used the NSStatusItem API, which has the annoying tendency to totally reorder my menubar on every login.
+
+The MenuMeters monitors are true SystemUIServer plugins (also known as Menu Extras). This means they can be reordered using command-drag and remember their positions in the menubar across logins and restarts.
+
+•	The CPU Meter can display system load both as a total percentage, or broken out as user and system time. It can also graph user and system load and display the load as a "thermometer". The menu for the CPU Meter contains several pieces of information I like to have a single click away (uptime, load average, open Activity Monitor.app, open Console.app).
+
+•	The Disk Activity Meter displays disk activity to local disks on the system (anything that is a IOKit BlockStorage driver). It is hotplug aware, and will show activity on FireWire and USB disks as they are mounted. The Disk Meter menu shows volume space details for local drives (it does not display mounted network volumes for speed reasons).
+
+•	The Memory Meter can display current memory usage as either a pie chart, thermometer, history graph, or as used/free totals. The Memory Meter menu shows a breakdown of current memory usage and VM statistics. The Memory Meter can optionally display a paging indicator light.
+
+•	The Net Meter can display network throughput as arrows, bytes per second, and/or as a graph. Both the arrows and the graph are scaled using a user-selected scaling factor and calculation. Scaling can be done on the basis of actual link speed reported by the network interface or peak traffic and can use one of several scaling calculations. The Net Meter menu shows current interfaces and their status. Interface information is gathered from the SystemConfiguraton framework and thus is Mac OS X network location aware (to prevent interfaces from appearing in this menu see the FAQ).
+
+
+MenuMeters comes without warranty or support. That said, if it causes you problems I'd like to hear about it so that I may be able to track down the bug. Even better, since this is open source, you can fix the bug yourself. Patches are accepted.
+
+
+How to install
+
+Please note that MenuMeters is only supported on Mac OS X 10.2 or later.
+
+To install MenuMeters simply run the included installer application. The installer will update any prior MenuMeters installation if you are upgrading from an earlier version.
+
+If you are a first-time MenuMeters user, then once installation is complete you can simply open your System Preferences application and click on the MenuMeters icon to start using MenuMeters. If you are updating from an older version of MenuMeters, you must logout and relogin to load the new version of MenuMeters. UNIX-savvy users can 'kill -HUP' the SystemUIServer process, but remember this will restart/logout other Menu Extras.
+
+
+How to uninstall
+
+If for some reason you decide MenuMeters is not for you, then you can use the MenuMeters installer's uninstall feature to remove MenuMeters from your system. Once you have uninstalled MenuMeters you must logout and relogin to complete the removal. This will remove MenuMeters and the included copy of MenuCracker from your system.
+
+If for some reason you wish to manually uninstall MenuMeters then delete either:
+
+•	/Library/PreferencePanes/MenuMeters.prefPane
+
+or
+
+•	/Users/<your username>/Library/PreferencePanes/MenuMeters.prefPane
+
+(You will only have one of the above; which one you have depends on the install type you chose during installation.)
+
+
+MenuCracker and MenuExtras
+
+In Mac OS X 10.2 Apple restricted the menu extra API to prevent third party developers from developing menu extras. This is a terrible shame, as menu extras have several major features over their lesser cousin the NSStatusItem. Notably, only menu extras can be command-dragged (Apple-key drag) to reorder their position on the menubar. Luckily several developers have produced packages which re-enable third party menu extras, allowing you to reclaim your menubar.
+
+MenuMeters incorporates MenuCracker, an open source project to enable third party menu extras. If needed MenuCracker will be automatically installed on your machine when you first activate MenuMeters from its System Preferences panel. The MenuCracker installation does not modify your system files in any way, and removing MenuMeters from your PreferencePanes folder along with a logout and relogin will remove MenuCracker entirely. More information on MenuCracker can be found at the MenuCracker project page (http://sourceforge.net/projects/menucracker/).
+
+If you already have a different method of enabling third party menu extras, such as Unsanity's Menu Extra Enabler (http://www.unsanity.com/) MenuMeters will honor that preference and will not install MenuCracker.
+
+It is possible that in some future release of Mac OS X Apple will block or break MenuCracker and/or Menu Extra Enabler. If MenuMeters does not load on your machine or reports an error when activating the meters please contact the author and check for a newer version of MenuCracker or Menu Extra Enabler at the locations mentioned above. 
+
+
+Known Issues
+
+•	On Mac OS X 10.2 (Jaguar) the CPU meter will incorrectly identify some PowerPC G4 7455 (Apollo) processors as 7450s. This is due to an issue in 10.2 Carbon where gestaltNativeCPUtype returns incorrect values. This bug has been fixed by Apple in Mac OS X 10.3 (Panther).
+
+•	Some third-party Ethernet/Wireless hardware drivers apparently do not report link speed. For these the Net Meter will assume a 10Mbps link. Since all Apple hardware/drivers I have tested with support the link speed value I'm assuming this is a bug in the affected drivers. 
+
+
+Legal / License
+
+MenuMeters and accompanying documentation are copyright © 2003-2009 Alex Harper.
+
+MenuMeters is released under the GNU General Public License (GPL) version 2. See the "GNU General Public License.rtf" included with this distribution for license terms.
+
+The MenuMeters package also includes MenuCracker. MenuCracker is an independent project covered under the Artistic License. For MenuCracker license terms see the "Artistic License.rtf."
+
+Mac OS X and PowerBook are registered trademarks of Apple Computer. All other trademarks are the property of their respective owners.
+
+
+Contact the Author / Donations
+
+Questions and comments about MenuMeters should be directed to Alex Harper (basilisk@foobox.net).
+
+Although distributed as open-source freeware, a great deal of effort has gone into the creation and maintenance of MenuMeters. If you find MenuMeters useful please consider showing your support by donating. Information on donations can be found at the MenuMeters product page (http://www.ragingmenace.com/software/menumeters/).
+
+Thanks
+
+MenuMeters could not exist without the source examples of a number of projects.
+
+• Frank Vercruesse - ASM - The first third party menu extra. Early versions were open source and provided great guidance.
+
+• Konstantin Anoshkin - ClassicSpy - A menu extra that was both useful (its was in my menubar for a long time) and simple enough that I could learn the basics of the API from its source.
+
+• nibs@arsware.org - Aquamon - Provided much of the inspiration and statistics gathering tools. Its a great tool to place many interesting statistics on your desktop. Unfortunately, I can never see my desktop so I wrote this instead.
+
+• Brad Barnhorst - MultiMeter - Guided me through the places where AquaMon was confusing.
+
+• Mike Piatek-Jimenez - X Resource Graph - Pointed me to a method (from gkrellm) to gather network stats without using kernel memory reads requiring setuid permissions.
+
+Additional thanks are owed to:
+
+• CocaDevCentral (http://www.cocoadevcentral.com) - For numerous examples and ideas.
+
+• James Bond - For reclaiming the menubar from Apple's block in Jaguar.
+
+• Jon and Chris - For answering my inane Mac OS X and Objective-C questions, and introducing me to the SystemConfiguration framework.
+
+
+   
