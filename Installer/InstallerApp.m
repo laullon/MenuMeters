@@ -230,6 +230,24 @@ enum {
 				[[NSBundle mainBundle] 
 					localizedStringForKey:kUpdateSuccessMessage 
 					value:nil table:nil]);
+			
+			BOOL foundApp = NO;
+			ProcessSerialNumber psn = {0, kNoProcess};
+			NSDictionary *info;
+			OSErr err=noErr;
+
+			while(!foundApp && !err){
+				err = GetNextProcess(&psn);
+				if (!err) {
+					info = (NSDictionary *)ProcessInformationCopyDictionary(&psn, kProcessDictionaryIncludeAllInformationMask);
+					foundApp = [@"com.apple.systemuiserver" isEqual:[info objectForKey:(NSString *)kCFBundleIdentifierKey]];
+					if(foundApp){
+						NSLog(@"Killing %@",[info objectForKey:(NSString *)kCFBundleIdentifierKey]);
+						KillProcess(&psn);
+					}
+				}
+			}
+			
 		} else {
 			NSBeginAlertSheet(
 				// Title
