@@ -7,6 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3168FACC11A6503E00CEDA37 /* SystemUIPlugin.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3168FACB11A6503E00CEDA37 /* SystemUIPlugin.framework */; };
+		3168FACD11A6504900CEDA37 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D403ADE20E04F17900348443 /* Cocoa.framework */; };
+		3168FACE11A6504D00CEDA37 /* Carbon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D403ADEB0E04F19C00348443 /* Carbon.framework */; };
+		3168FACF11A6505B00CEDA37 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D403ADF30E04F1E100348443 /* SystemConfiguration.framework */; };
+		3168FAD011A6506C00CEDA37 /* IOKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D478F451101A8AE100C79173 /* IOKit.framework */; };
+		3168FB3411A6521E00CEDA37 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3168FB3311A6521E00CEDA37 /* Info.plist */; };
+		3168FB4C11A653A000CEDA37 /* MenuMeterCalendarExtra.m in Sources */ = {isa = PBXBuildFile; fileRef = 3168FB4B11A653A000CEDA37 /* MenuMeterCalendarExtra.m */; };
+		3168FEED11A672B300CEDA37 /* MenuMeterCalendar.menu in Resources */ = {isa = PBXBuildFile; fileRef = 3168FAC411A64F7600CEDA37 /* MenuMeterCalendar.menu */; };
 		D403AD3C0E04E99C00348443 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D403AD3B0E04E99C00348443 /* Foundation.framework */; };
 		D403ADE30E04F17900348443 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D403ADE20E04F17900348443 /* Cocoa.framework */; };
 		D403ADE40E04F18400348443 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D403ADE20E04F17900348443 /* Cocoa.framework */; };
@@ -148,6 +156,20 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		3168FAC911A6502B00CEDA37 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D40DB4A703D25F2100A87BC9 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D4ECB2BB05FE6F3F00954E26 /* Defaults Bundle */;
+			remoteInfo = "Defaults Bundle";
+		};
+		3168FE9611A66B1C00CEDA37 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D40DB4A703D25F2100A87BC9 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 3168FAC311A64F7600CEDA37 /* Calendar */;
+			remoteInfo = Calendar;
+		};
 		D46DB6AD054E290E001EF699 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = D40DB4A703D25F2100A87BC9 /* Project object */;
@@ -235,6 +257,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3168FAA611A64EBD00CEDA37 /* Info copy.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "Info copy.plist"; path = "MenuExtras/MenuMeterCPU/Info copy.plist"; sourceTree = "<group>"; };
+		3168FAC411A64F7600CEDA37 /* MenuMeterCalendar.menu */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MenuMeterCalendar.menu; sourceTree = BUILT_PRODUCTS_DIR; };
+		3168FACB11A6503E00CEDA37 /* SystemUIPlugin.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemUIPlugin.framework; path = System/Library/PrivateFrameworks/SystemUIPlugin.framework; sourceTree = SDKROOT; };
+		3168FB3311A6521E00CEDA37 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3168FB4A11A653A000CEDA37 /* MenuMeterCalendarExtra.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MenuMeterCalendarExtra.h; path = MenuExtras/MenuMeterCalendar/MenuMeterCalendarExtra.h; sourceTree = "<group>"; };
+		3168FB4B11A653A000CEDA37 /* MenuMeterCalendarExtra.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MenuMeterCalendarExtra.m; path = MenuExtras/MenuMeterCalendar/MenuMeterCalendarExtra.m; sourceTree = "<group>"; };
 		D40138A204F738D100A87BC9 /* Japanese */ = {isa = PBXFileReference; lastKnownFileType = wrapper.nib; name = Japanese; path = Japanese.lproj/Installer.nib; sourceTree = "<group>"; };
 		D40138A304F738D700A87BC9 /* Japanese */ = {isa = PBXFileReference; fileEncoding = 10; lastKnownFileType = text.plist.strings; lineEnding = 0; name = Japanese; path = Japanese.lproj/Localizable.strings; sourceTree = "<group>"; };
 		D40138D504F7B1DD00A87BC9 /* French */ = {isa = PBXFileReference; lastKnownFileType = wrapper.nib; name = French; path = French.lproj/Installer.nib; sourceTree = "<group>"; };
@@ -406,6 +434,18 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		3168FAC211A64F7600CEDA37 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3168FACC11A6503E00CEDA37 /* SystemUIPlugin.framework in Frameworks */,
+				3168FACD11A6504900CEDA37 /* Cocoa.framework in Frameworks */,
+				3168FACE11A6504D00CEDA37 /* Carbon.framework in Frameworks */,
+				3168FACF11A6505B00CEDA37 /* SystemConfiguration.framework in Frameworks */,
+				3168FAD011A6506C00CEDA37 /* IOKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		D4ECB2C205FE6F3F00954E26 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -495,6 +535,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3168FAE911A6513600CEDA37 /* MenuMeterCalendar */ = {
+			isa = PBXGroup;
+			children = (
+				3168FAEA11A6514900CEDA37 /* Resource */,
+				3168FB4A11A653A000CEDA37 /* MenuMeterCalendarExtra.h */,
+				3168FB4B11A653A000CEDA37 /* MenuMeterCalendarExtra.m */,
+			);
+			name = MenuMeterCalendar;
+			sourceTree = "<group>";
+		};
+		3168FAEA11A6514900CEDA37 /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				3168FB3311A6521E00CEDA37 /* Info.plist */,
+			);
+			name = Resource;
+			sourceTree = "<group>";
+		};
 		D40DB4A303D25F2100A87BC9 = {
 			isa = PBXGroup;
 			children = (
@@ -509,12 +567,14 @@
 				D40DB4B803D2600C00A87BC9 /* System Frameworks */,
 				D40DB50803D262ED00A87BC9 /* System Private Frameworks */,
 				D40DB4B003D25F6400A87BC9 /* Products */,
+				3168FACB11A6503E00CEDA37 /* SystemUIPlugin.framework */,
 			);
 			sourceTree = "<group>";
 		};
 		D40DB4A903D25F4C00A87BC9 /* MenuExtras */ = {
 			isa = PBXGroup;
 			children = (
+				3168FAE911A6513600CEDA37 /* MenuMeterCalendar */,
 				D477AAD603D4B9DE00A87BC9 /* MenuMeterCPU */,
 				D42EC94703D498CC00A87BC9 /* MenuMeterDisk */,
 				D45F12C503D4886000A87BC9 /* MenuMeterMem */,
@@ -534,6 +594,7 @@
 				D4ECB3B605FE72E100954E26 /* MenuMeters.prefPane */,
 				D4ECB3C705FE735400954E26 /* InstallTool */,
 				D4ECB3E005FE736D00954E26 /* MenuMeters Installer.app */,
+				3168FAC411A64F7600CEDA37 /* MenuMeterCalendar.menu */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -708,6 +769,7 @@
 			children = (
 				D4ECB38E05FE71B000954E26 /* Info.plist */,
 				D477AAFF03D4BEB400A87BC9 /* Localizable.strings */,
+				3168FAA611A64EBD00CEDA37 /* Info copy.plist */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -919,6 +981,24 @@
 /* End PBXLegacyTarget section */
 
 /* Begin PBXNativeTarget section */
+		3168FAC311A64F7600CEDA37 /* Calendar */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3168FAC811A64F7700CEDA37 /* Build configuration list for PBXNativeTarget "Calendar" */;
+			buildPhases = (
+				3168FAC011A64F7600CEDA37 /* Resources */,
+				3168FAC111A64F7600CEDA37 /* Sources */,
+				3168FAC211A64F7600CEDA37 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				3168FACA11A6502B00CEDA37 /* PBXTargetDependency */,
+			);
+			name = Calendar;
+			productName = Calendar;
+			productReference = 3168FAC411A64F7600CEDA37 /* MenuMeterCalendar.menu */;
+			productType = "com.apple.product-type.bundle";
+		};
 		D4ECB2BB05FE6F3F00954E26 /* Defaults Bundle */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = D4AFB32A087726B20023B640 /* Build configuration list for PBXNativeTarget "Defaults Bundle" */;
@@ -1037,6 +1117,7 @@
 				D4ECB3BB05FE733C00954E26 /* PBXTargetDependency */,
 				D4ECB39505FE72E100954E26 /* PBXTargetDependency */,
 				D4ECB3B905FE733700954E26 /* PBXTargetDependency */,
+				3168FE9711A66B1C00CEDA37 /* PBXTargetDependency */,
 			);
 			name = PrefPane;
 			productInstallPath = "$(USER_LIBRARY_DIR)/Bundles";
@@ -1117,11 +1198,20 @@
 				D4ECB2EE05FE707A00954E26 /* Memory Meter */,
 				D4ECB2CD05FE700600954E26 /* Net Meter */,
 				D4ECB2BB05FE6F3F00954E26 /* Defaults Bundle */,
+				3168FAC311A64F7600CEDA37 /* Calendar */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		3168FAC011A64F7600CEDA37 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3168FB3411A6521E00CEDA37 /* Info.plist in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		D4ECB2BF05FE6F3F00954E26 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -1198,6 +1288,7 @@
 				D4ECB4FE05FE7F2400954E26 /* MenuMeterDisk.menu in Resources */,
 				D4ECB4FF05FE7F2500954E26 /* MenuMeterCPU.menu in Resources */,
 				D41C27771048FE9C00A8E325 /* MenuCracker.menu in Resources */,
+				3168FEED11A672B300CEDA37 /* MenuMeterCalendar.menu in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1262,6 +1353,14 @@
 /* End PBXRezBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		3168FAC111A64F7600CEDA37 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3168FB4C11A653A000CEDA37 /* MenuMeterCalendarExtra.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		D4ECB2C005FE6F3F00954E26 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -1348,6 +1447,16 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		3168FACA11A6502B00CEDA37 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D4ECB2BB05FE6F3F00954E26 /* Defaults Bundle */;
+			targetProxy = 3168FAC911A6502B00CEDA37 /* PBXContainerItemProxy */;
+		};
+		3168FE9711A66B1C00CEDA37 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 3168FAC311A64F7600CEDA37 /* Calendar */;
+			targetProxy = 3168FE9611A66B1C00CEDA37 /* PBXContainerItemProxy */;
+		};
 		D4EB673F04F5C6D700A87BC9 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = D4ECB3CB05FE736D00954E26 /* Installer */;
@@ -1526,6 +1635,53 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		3168FAC611A64F7700CEDA37 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = YES;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SDKROOT)$(SYSTEM_LIBRARY_DIR)/PrivateFrameworks\"",
+				);
+				GCC_ENABLE_FIX_AND_CONTINUE = NO;
+				GCC_MODEL_TUNING = G5;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = MenuMeters.pch;
+				INFOPLIST_FILE = /Users/laullon/xcode/MenuMeters/MenuExtras/MenuMeterCalendar/Info.plist;
+				INSTALL_PATH = "";
+				OTHER_LDFLAGS = "";
+				PREBINDING = NO;
+				PRODUCT_NAME = MenuMeterCalendar;
+				WRAPPER_EXTENSION = menu;
+			};
+			name = Release;
+		};
+		3168FAC711A64F7700CEDA37 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = YES;
+				COPY_PHASE_STRIP = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SDKROOT)$(SYSTEM_LIBRARY_DIR)/PrivateFrameworks\"",
+				);
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_FIX_AND_CONTINUE = NO;
+				GCC_MODEL_TUNING = G5;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = MenuMeters.pch;
+				INFOPLIST_FILE = /Users/laullon/xcode/MenuMeters/MenuExtras/MenuMeterCalendar/Info.plist;
+				INSTALL_PATH = "";
+				OTHER_LDFLAGS = "";
+				PREBINDING = NO;
+				PRODUCT_NAME = MenuMeterCalendar;
+				WRAPPER_EXTENSION = menu;
+			};
+			name = Debug;
+		};
 		D4AFB328087726B20023B640 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -1791,6 +1947,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		3168FAC811A64F7700CEDA37 /* Build configuration list for PBXNativeTarget "Calendar" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3168FAC611A64F7700CEDA37 /* Release */,
+				3168FAC711A64F7700CEDA37 /* Debug */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		D4AFB327087726B20023B640 /* Build configuration list for PBXNativeTarget "Install Tool" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
