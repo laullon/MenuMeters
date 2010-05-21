@@ -1641,7 +1641,7 @@
 				"MACOSX_DEPLOYMENT_TARGET[sdk=macosx10.4]" = 10.4;
 				"MACOSX_DEPLOYMENT_TARGET[sdk=macosx10.5][arch=*]" = 10.5;
 				PREBINDING = NO;
-				SDKROOT = macosx10.4;
+				SDKROOT = macosx10.5;
 				"SDKROOT[arch=i386]" = macosx10.4;
 				"SDKROOT[arch=ppc]" = macosx10.3.9;
 				"SDKROOT[arch=x86_64]" = macosx10.5;
@@ -1649,7 +1649,6 @@
 				WARNING_CFLAGS = (
 					"-Wall",
 					"-Werror",
-					"-Wshorten-64-to-32",
 				);
 				"WARNING_CFLAGS[sdk=macosx10.3.9][arch=*]" = (
 					"-Wall",
@@ -1682,7 +1681,7 @@
 				"MACOSX_DEPLOYMENT_TARGET[sdk=macosx10.4]" = 10.4;
 				"MACOSX_DEPLOYMENT_TARGET[sdk=macosx10.5][arch=*]" = 10.5;
 				PREBINDING = NO;
-				SDKROOT = macosx10.4;
+				SDKROOT = macosx10.5;
 				"SDKROOT[arch=i386]" = macosx10.4;
 				"SDKROOT[arch=ppc]" = macosx10.3.9;
 				"SDKROOT[arch=x86_64]" = macosx10.5;
@@ -1690,7 +1689,6 @@
 				WARNING_CFLAGS = (
 					"-Wall",
 					"-Werror",
-					"-Wshorten-64-to-32",
 				);
 				"WARNING_CFLAGS[sdk=macosx10.3.9][arch=*]" = (
 					"-Wall",

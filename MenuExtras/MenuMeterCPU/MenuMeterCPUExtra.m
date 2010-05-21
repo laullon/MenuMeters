@@ -22,6 +22,8 @@
 // 
 
 #import "MenuMeterCPUExtra.h"
+#include <Carbon/Carbon.h>
+#include	<stdio.h>
 
 ///////////////////////////////////////////////////////////////
 //	
@@ -68,6 +70,8 @@
 #define kOpenActivityMonitorTitle			@"Open Activity Monitor"
 #define kOpenConsoleTitle					@"Open Console"
 #define kNoInfoErrorMessage					@"No info available"
+#define kTopProcessTitle					@"Top process"
+
 
 
 ///////////////////////////////////////////////////////////////
@@ -178,6 +182,18 @@
 	menuItem = (NSMenuItem *)[extraMenu addItemWithTitle:@"" action:nil keyEquivalent:@""];
 	[menuItem setEnabled:NO];
 		
+	// Add Top process title and blanks for load display
+	menuItem = (NSMenuItem *)[extraMenu addItemWithTitle:[bundle localizedStringForKey:kTopProcessTitle value:nil table:nil]
+												  action:nil 
+										   keyEquivalent:@""];
+	[menuItem setEnabled:NO];
+	menuItem = (NSMenuItem *)[extraMenu addItemWithTitle:@"" action:nil keyEquivalent:@""];
+	[menuItem setEnabled:NO];
+	menuItem = (NSMenuItem *)[extraMenu addItemWithTitle:@"" action:nil keyEquivalent:@""];
+	[menuItem setEnabled:NO];
+	menuItem = (NSMenuItem *)[extraMenu addItemWithTitle:@"" action:nil keyEquivalent:@""];
+	[menuItem setEnabled:NO];
+	
 	// And the "Open Process Viewer"/"Open Activity Monitor" and "Open Console" item
 	[extraMenu addItem:[NSMenuItem separatorItem]];
 	if (isPantherOrLater) {
@@ -311,6 +327,7 @@
 	return currentImage;
 				
 } // image
+int get_proc_info(pid_t pid);
 
 - (NSMenu *)menu {	
 
@@ -324,10 +341,143 @@
 	title = [NSString stringWithFormat:kMenuIndentFormat, [cpuInfo loadAverage]];
 	if (title) LiveUpdateMenuItemTitle(extraMenu, kCPULoadInfoMenuIndex, title);
 
+	NSDictionary *info;
+	BOOL foundApp = NO;
+	OSErr err=noErr;
+	ProcessSerialNumber psn = {0, kNoProcess};
+	auto ProcessInfoRec procInfo;
+	unsigned char                   theProcessName[32];
+	procInfo.processName = theProcessName;
+
+#if __LP64__
+	FSRef                   theRef;
+	procInfo.processInfoLength = 0;                  // set to zero to force retireve process info
+	procInfo.processAppRef = &theRef;
+#else
+	FSSpec                          theSpec;
+	procInfo.processInfoLength = 0;                  // set to zero to force retireve process info
+	procInfo.processAppSpec = &theSpec;
+#endif
+
+	auto OSErr osErr = noErr;
+	while (procNotFound != err)
+	{	
+		err = GetNextProcess(&psn);
+		
+		if (!err)
+		{
+			info = (NSDictionary *)ProcessInformationCopyDictionary(&psn, kProcessDictionaryIncludeAllInformationMask);
+			
+			
+			foundApp = [@"Monitor de Actividad" isEqual:[info objectForKey:(NSString *)kCFBundleNameKey]];
+			if (foundApp) {
+				LiveUpdateMenuItemTitle(extraMenu, kTopProcessMenuIndex, [info objectForKey:(NSString *)kCFBundleNameKey]);
+				NSLog(@"TickCount= %d",TickCount());
+				NSLog(@"proc= %@",[info objectForKey:(NSString *)kCFBundleNameKey]);
+				if (noErr == (osErr = GetProcessInformation(&psn, &procInfo))) {
+					NSLog(@"1 procInfo= %d",procInfo.processLaunchDate);
+					NSLog(@"2 procInfo= %d",procInfo.processActiveTime);
+					
+				}
+				
+				get_proc_info(21898);
+				
+				NSLog(@"osErr = %d",osErr);
+			}
+			[info release];
+		}
+		else
+		{
+			break; // either a problem or the end of the list
+		}
+	}
+	
+	
 	// Send the menu back to SystemUIServer
 	return extraMenu;
 
 } // menu
+
+int get_proc_info(pid_t pid) {
+	int err;
+	struct kinfo_proc *result = NULL;
+	size_t length;
+	int mib[] = {CTL_KERN, KERN_PROC, KERN_PROC_PID, pid};
+	
+	/* We start by calling sysctl with result == NULL and length == 0.
+	 That will succeed, and set length to the appropriate length.
+	 We then allocate a buffer of that size and call sysctl again
+	 with that buffer.
+	 */
+	length = 0;
+	err = sysctl(mib, 4, NULL, &length, NULL, 0);
+	if (err == -1) {
+		err = errno;
+	}
+	if (err == 0) {
+		result = malloc(length);
+		err = sysctl(mib, 4, result, &length, NULL, 0);
+		if (err == -1)
+			err = errno;
+		if (err == ENOMEM) {
+			free(result); /* clean up */
+			result = NULL;
+		}
+	}
+	
+	NSLog(@"kp_eproc.e_flag :%d", result->kp_eproc.e_flag );
+	NSLog(@"kp_eproc.e_jobc :%d", result->kp_eproc.e_jobc );
+	NSLog(@"kp_eproc.e_login :%s", result->kp_eproc.e_login );
+	NSLog(@"kp_eproc.e_pgid :%d", result->kp_eproc.e_pgid );
+	NSLog(@"kp_eproc.e_ppid :%d", result->kp_eproc.e_ppid );
+	NSLog(@"kp_eproc.e_tdev :%d", result->kp_eproc.e_tdev );
+	NSLog(@"kp_eproc.e_tpgid :%d", result->kp_eproc.e_tpgid );
+	NSLog(@"kp_eproc.e_wmesg :%s", result->kp_eproc.e_wmesg );
+	NSLog(@"kp_eproc.e_xccount :%d", result->kp_eproc.e_xccount );
+	NSLog(@"kp_eproc.e_xrssize :%d", result->kp_eproc.e_xrssize );
+	NSLog(@"kp_eproc.e_xsize :%d", result->kp_eproc.e_xsize );
+	NSLog(@"kp_eproc.e_xswrss :%d", result->kp_eproc.e_xswrss );
+	NSLog(@"kp_proc.p_rtime :%d, %d", result->kp_proc.p_rtime.tv_sec, result->kp_proc.p_rtime.tv_usec );
+	NSLog(@"kp_proc.p_acflag :%d", result->kp_proc.p_acflag );
+	NSLog(@"kp_proc.p_comm :%s", result->kp_proc.p_comm );
+	NSLog(@"kp_proc.p_cpticks :%d", result->kp_proc.p_cpticks );
+	NSLog(@"kp_proc.p_debugger :%d", result->kp_proc.p_debugger );
+	NSLog(@"kp_proc.p_dupfd :%d", result->kp_proc.p_dupfd );
+	NSLog(@"kp_proc.p_estcpu :%d", result->kp_proc.p_estcpu );
+	NSLog(@"kp_proc.p_flag :%d", result->kp_proc.p_flag );
+	NSLog(@"kp_proc.p_holdcnt :%d", result->kp_proc.p_holdcnt );
+	NSLog(@"kp_proc.p_iticks :%d", result->kp_proc.p_iticks );
+	NSLog(@"kp_proc.p_nice :%d", result->kp_proc.p_nice );
+	NSLog(@"kp_proc.p_oppid :%d", result->kp_proc.p_oppid );
+	NSLog(@"kp_proc.p_pctcpu :%d", result->kp_proc.p_pctcpu );
+	NSLog(@"kp_proc.p_pid :%d", result->kp_proc.p_pid );
+	NSLog(@"kp_proc.p_priority :%d", result->kp_proc.p_priority );
+	NSLog(@"kp_proc.p_sigcatch :%d", result->kp_proc.p_sigcatch );
+	NSLog(@"kp_proc.p_slptime :%d", result->kp_proc.p_slptime );
+	NSLog(@"kp_proc.p_stat :%d", result->kp_proc.p_stat );
+	NSLog(@"kp_proc.p_sticks :%d", result->kp_proc.p_sticks );
+	NSLog(@"kp_proc.p_swtime :%d", result->kp_proc.p_swtime );
+	NSLog(@"kp_proc.p_traceflag :%d", result->kp_proc.p_traceflag );
+	NSLog(@"kp_proc.p_un :%d", result->kp_proc.p_un );				
+	NSLog(@"kp_proc.p_usrpri :%d", result->kp_proc.p_usrpri );
+	NSLog(@"kp_proc.p_uticks :%d", result->kp_proc.p_uticks );
+	NSLog(@"kp_proc.p_wchan :%d", result->kp_proc.p_wchan );
+	NSLog(@"kp_proc.p_wmesg :%s", result->kp_proc.p_wmesg );
+	NSLog(@"kp_proc.p_xstat :%d", result->kp_proc.p_xstat );
+	NSLog(@"kp_proc.sigwait :%d", result->kp_proc.sigwait );
+	NSLog(@"kp_proc.user_stack :%d", result->kp_proc.user_stack );
+	
+	/*
+	 p->pid = result->kp_proc.p_pid;
+	 p->ppid = result->kp_eproc.e_ppid;
+	 p->starttime = result->kp_proc.p_starttime.tv_sec;
+	 p->last_jiffies = result->kp_proc.p_cpticks;
+	 */
+	//p_pctcpu
+	
+	return 0;
+}
+
 
 ///////////////////////////////////////////////////////////////
 //	
@@ -336,7 +486,7 @@
 ///////////////////////////////////////////////////////////////
 
 - (void)renderHistoryGraphIntoImage:(NSImage *)image forProcessor:(uint32_t)processor atOffset:(float)offset {
-		
+	
 	// Construct paths
 	NSBezierPath *systemPath =  [NSBezierPath bezierPath];
 	NSBezierPath *userPath =  [NSBezierPath bezierPath];
