@@ -41,6 +41,7 @@
 
 // Bundle ID for the Net menu extra
 #define kNetMenuBundleID				@"com.ragingmenace.MenuMeterNet"
+#define kCalMenuBundleID				@"com.laullon.MenuMeterCalendar"
 
 // Bundle information for the pref pane
 #define kPrefPaneBundleID				@"com.ragingmenace.MenuMeters"

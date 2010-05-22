@@ -11,10 +11,15 @@
 #import "AppleUndocumented.h"
 #import "MenuMeters.h"
 #import "MenuMeterDefaults.h"
-
+#import "MenuMeterCalendarView.h"
 
 @interface MenuMeterCalendarExtra : NSMenuExtra {
 
+	NSMenu *theMenu;
+	MenuMeterCalendarView *theView;
+	NSViewController *calendarVC;
 }
+
+-(NSDate*)oneWeekLater;
 
 @end

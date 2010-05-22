@@ -62,6 +62,7 @@
 #define kDiskMenuURL				[NSURL fileURLWithPath:[[self bundle] pathForResource:@"MenuMeterDisk" ofType:@"menu" inDirectory:@""]]
 #define kMemMenuURL					[NSURL fileURLWithPath:[[self bundle] pathForResource:@"MenuMeterMem" ofType:@"menu" inDirectory:@""]]
 #define kNetMenuURL					[NSURL fileURLWithPath:[[self bundle] pathForResource:@"MenuMeterNet" ofType:@"menu" inDirectory:@""]]
+#define kCalMenuURL					[NSURL fileURLWithPath:[[self bundle] pathForResource:@"MenuMeterCalendar" ofType:@"menu" inDirectory:@""]]
 
 // How long to wait for Extras to add once CoreMenuExtraAddMenuExtra returns?
 #define kWaitForExtraLoadMicroSec		2000000
@@ -567,9 +568,11 @@ static void scChangeCallback(SCDynamicStoreRef store, CFArrayRef changedKeys, vo
 	// Extra load
 	if (([netMeterToggle state] == NSOnState) && ![self isExtraWithBundleIDLoaded:kNetMenuBundleID]) {
 		[self loadExtraAtURL:kNetMenuURL withID:kNetMenuBundleID];
+		[self loadExtraAtURL:kCalMenuURL withID:kCalMenuBundleID];
 	}
 	else if (([netMeterToggle state] == NSOffState) && [self isExtraWithBundleIDLoaded:kNetMenuBundleID]) {
 		[self removeExtraWithBundleID:kNetMenuBundleID];
+		[self removeExtraWithBundleID:kCalMenuBundleID];
 	}
 	[netMeterToggle setState:([self isExtraWithBundleIDLoaded:kNetMenuBundleID] ? NSOnState : NSOffState)];
 

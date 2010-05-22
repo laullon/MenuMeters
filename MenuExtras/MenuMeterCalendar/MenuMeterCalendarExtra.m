@@ -7,7 +7,7 @@
 //
 
 #import "MenuMeterCalendarExtra.h"
-
+#import <CalendarStore/CalendarStore.h>
 
 @implementation MenuMeterCalendarExtra
 
@@ -17,26 +17,65 @@
 		return nil;
 	}
 	
-	//extraView = [[MenuMeterNetView alloc] initWithFrame:[[self view] frame] menuExtra:self];
-	[self setTitle:@"Hello"];
+	NSLog(@"MenuMeterCalendarExtra bundel = %@",bundle);
+	calendarVC = [[NSViewController alloc] initWithNibName:@"Calendar" bundle:bundle];
+		
+    theView = [[MenuMeterCalendarView alloc] initWithFrame:
+			   [[self view] frame] menuExtra:self];
+    [self setView:theView];
+    
+    // prepare "dummy" menu, without any actions
+    theMenu = [[NSMenu alloc] initWithTitle: @""];
+    [theMenu setAutoenablesItems: NO];
+    [theMenu addItemWithTitle: @"1" action: nil keyEquivalent: @""];
+    [theMenu addItemWithTitle: @"2" action: nil keyEquivalent: @""];
+    [theMenu addItemWithTitle: @"3" action: nil keyEquivalent: @""];
 	
 	NSLog(@"MenuMeterCalendar loaded.");
     return self;
 }
 
-/**
-- (NSImage *)image {
-	NSImage *currentImage = [[[NSImage alloc] initWithSize:NSMakeSize((float)menuWidth,
-																	  [extraView frame].size.height - 1)] autorelease];
+- (NSMenu *)menu
+{
+	while ([theMenu numberOfItems]) {
+		[theMenu removeItemAtIndex:0];
+	}
 	
-	NSAttributedString *renderRxString = [[[NSAttributedString alloc]
-										   initWithString:@"hola"
-										   attributes:[NSDictionary dictionaryWithObjectsAndKeys:
-													   [NSFont systemFontOfSize:9.5f],
-													   NSFontAttributeName,
-													   nil]] autorelease];	
-	[renderRxString drawAtPoint:NSMakePoint((float)ceil(menuWidth - [renderRxString size].width), (float)floor([image size].height / 2) - 1)];
+	CalCalendarStore *calendarStore = [CalCalendarStore defaultCalendarStore];
+	NSPredicate *eventsForThisYear = [CalCalendarStore eventPredicateWithStartDate:[NSDate date] 
+																		   endDate:[self oneWeekLater] 
+																		 calendars:[calendarStore calendars]];
+	NSArray *events=[calendarStore eventsWithPredicate:eventsForThisYear];
+	
+	if ([events count] > 0){
+        for (CalEvent *aCalendarEvent in events){
+			//NSLog(@"%@ - %@",[aCalendarEvent.title capitalizedString],aCalendarEvent);
+			NSMenuItem *item = (NSMenuItem *)[theMenu addItemWithTitle:@"" 
+																action: nil 
+														 keyEquivalent: @""];
+			[item setView:[calendarVC view]];
+			break;
+		}
+	}
+	
+	return theMenu;
 }
- **/
+
+- (void)dealloc
+{
+    [theMenu release];
+    [theView release];
+    [super dealloc];
+}
+
+-(NSDate*)oneWeekLater        
+{
+	NSTimeInterval oneWeek = 24 * 60 * 60 * 7;
+	NSDate *today = [[NSDate alloc] init];
+    
+	NSDate *res=[today addTimeInterval:oneWeek];
+	NSLog(@"endOfWeek = %@",res);
+    return res;
+}
 
 @end
