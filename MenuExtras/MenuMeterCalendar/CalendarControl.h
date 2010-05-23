@@ -20,25 +20,31 @@
 
 #import <AppKit/AppKit.h>
 
-@interface WBCalendarControl : NSControl
+@interface CalendarControl : NSControl
 {
-    NSCalendarDate *currentDate;
+	NSCalendarDate *currentDate;
     BOOL newdate;
     id target;
     SEL action;
     int firstday;
-    int monthday[42];
     int firstDayOfWeek;
     NSDictionary *normalAttributes;
     NSDictionary *dayOfWeekAttributes;
+	NSDictionary *otherMonthAttributes;
+	IBOutlet NSTextField* month;
 }
 
 - (NSDate *) date;
 - (void)setDate:(NSDate *) aDate;
 
-- (int)drawday:(int) aDay;
+- (int)drawday:(NSDate *)aDay col:(int)col row:(int)row;
 
 - (void)setAction:(SEL) aAction;
 - (void)setTarget:(id) aTarget;
+
+- (NSDate *)getFirstDayOfCalendar;
+
+- (IBAction) prevMonth: sender;
+- (IBAction) nextMonth: sender;
 
 @end

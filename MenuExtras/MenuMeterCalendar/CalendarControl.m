@@ -18,13 +18,13 @@
  SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
-#import "WBCalendarControl.h"
+#import "CalendarControl.h"
 
-#define WBCALENDARCONTROL_WEEK_OFFSET_V		18
-#define WBCALENDARCONTROL_DAY_WIDTH			17
-#define WBCALENDARCONTROL_DAY_HEIGHT		14
-#define WBCALENDARCONTROL_OFFSET_H			4
-#define WBCALENDARCONTROL_OFFSET_V			2
+#define WEEK_OFFSET_V		18
+#define DAY_WIDTH			17
+#define DAY_HEIGHT			14
+#define OFFSET_H			4
+#define OFFSET_V			2
 
 int numberofDayInMonthForYear(int aMonth,int aYear)
 {
@@ -46,7 +46,7 @@ int numberofDayInMonthForYear(int aMonth,int aYear)
     return 0;
 }
 
-@implementation WBCalendarControl
+@implementation CalendarControl
 
 - (id)initWithFrame:(NSRect)frame
 {
@@ -63,6 +63,9 @@ int numberofDayInMonthForYear(int aMonth,int aYear)
         
         normalAttributes=[[NSDictionary alloc] initWithObjectsAndKeys:[NSFont labelFontOfSize:10],NSFontAttributeName,
 						  nil];
+        otherMonthAttributes=[[NSDictionary alloc] initWithObjectsAndKeys:[NSFont labelFontOfSize:10],NSFontAttributeName,
+							  [NSColor grayColor],NSForegroundColorAttributeName,
+							  nil];
 	}
     
     return self;
@@ -82,57 +85,41 @@ int numberofDayInMonthForYear(int aMonth,int aYear)
 
 - (void)setDate:(NSDate *) aDate
 {
+	
     if (aDate!=nil)
-    {
-        int i;
-        int numberOfDays;
-        
+    {        
         if (currentDate!=nil)
         {
             [currentDate release];
         }
-        
-        currentDate=[[aDate dateWithCalendarFormat:nil timeZone:nil] retain];
-        
-        numberOfDays=numberofDayInMonthForYear([currentDate monthOfYear]-1,[currentDate yearOfCommonEra]);
-        
-        firstday=((([currentDate dayOfWeek]-([currentDate dayOfMonth]%7)+1-firstDayOfWeek))+7)%7;
-        
-        for(i=0;i<firstday;i++)
-        {
-            monthday[i]=0;
-        }
-        
-        for(i=firstday;i<(firstday+numberOfDays);i++)
-        {
-            monthday[i]=i-firstday+1;
-        }
-        
-        for(i=(firstday+numberOfDays);i<42;i++)
-        {
-            monthday[i]=0;
-        }
-        
+		currentDate=[[aDate dateWithCalendarFormat:nil timeZone:nil] retain];
+        firstday=1;
+		
+		NSDateFormatter* theDateFormatter = [[[NSDateFormatter alloc] init] autorelease];
+		[theDateFormatter setFormatterBehavior:NSDateFormatterBehavior10_4];
+		[theDateFormatter setDateFormat:@"MMMM"];
+		[month setStringValue:[theDateFormatter stringFromDate:aDate]];
+
         [self setNeedsDisplay:YES];
     }
 }
 
-- (int)drawday:(int) aDay
+- (int)drawday:(NSDate *)aDay col:(int)col row:(int)row;
 {
     NSRect tBounds=[self bounds];
-    int tRow,tColumn;
     NSString * tString;
     NSSize tSize;
     NSRect tRect;
-    
-    tRow=aDay/7;
-    tColumn=aDay-(tRow*7);
-    
-    tString=[NSString stringWithFormat:@"%d",monthday[aDay]];
+	NSCalendarDate *day=[[aDay dateWithCalendarFormat:nil timeZone:nil] retain];
 	
-    tRect=NSMakeRect(WBCALENDARCONTROL_OFFSET_H+WBCALENDARCONTROL_DAY_WIDTH*tColumn,NSHeight(tBounds)-WBCALENDARCONTROL_WEEK_OFFSET_V-(tRow+1)*WBCALENDARCONTROL_DAY_HEIGHT-WBCALENDARCONTROL_OFFSET_V,WBCALENDARCONTROL_DAY_WIDTH,WBCALENDARCONTROL_DAY_HEIGHT);
+    tString=[NSString stringWithFormat:@"%d",[day dayOfMonth]];
+	
+    tRect=NSMakeRect(OFFSET_H+DAY_WIDTH*col,NSHeight(tBounds)-WEEK_OFFSET_V-(row+1)*DAY_HEIGHT-OFFSET_V,DAY_WIDTH,DAY_HEIGHT);
     
-    if ([currentDate dayOfMonth]==monthday[aDay])
+	//XXX arreglar esto
+	NSDate *today=[NSDate date];
+	NSLog(@" %@ == %@ > %@",today,day,[today isEqualToDate:day]);
+    if ([today isEqualToDate:day])
     {
         NSRect tHiliteRect;
         
@@ -152,8 +139,16 @@ int numberofDayInMonthForYear(int aMonth,int aYear)
     
     tSize=[tString sizeWithAttributes:normalAttributes];
     
+	NSDictionary *attr;
+	
+	if ([currentDate monthOfYear]==[day monthOfYear]){
+		attr=normalAttributes;
+	}else {
+		attr=otherMonthAttributes;
+	}
+	
     [tString drawAtPoint:NSMakePoint(NSMidX(tRect)-tSize.width*0.5+1,NSMinY(tRect)) 
-          withAttributes:normalAttributes];
+          withAttributes:attr];
     
     return 0;
 }
@@ -175,7 +170,7 @@ int numberofDayInMonthForYear(int aMonth,int aYear)
     
     for(i=0;i<7;i++)
     {
-        tRect=NSMakeRect(WBCALENDARCONTROL_OFFSET_H+i*WBCALENDARCONTROL_DAY_WIDTH,NSHeight(tBounds)-WBCALENDARCONTROL_WEEK_OFFSET_V-WBCALENDARCONTROL_OFFSET_V,WBCALENDARCONTROL_DAY_WIDTH,WBCALENDARCONTROL_WEEK_OFFSET_V);
+        tRect=NSMakeRect(OFFSET_H+i*DAY_WIDTH,NSHeight(tBounds)-WEEK_OFFSET_V-OFFSET_V,DAY_WIDTH,WEEK_OFFSET_V);
         
         tString=dayArray[(firstDayOfWeek+i)%7];
         
@@ -186,13 +181,15 @@ int numberofDayInMonthForYear(int aMonth,int aYear)
     }
     
     // Draw the days
-    
-    for(i=firstday;i<42;i++)
+	NSTimeInterval oneDay=(24*60*60);
+    NSDate *day=[self getFirstDayOfCalendar];
+	for(int r=0;r<7;r++)
     {
-        if (monthday[i]>0)
-        {
-            [self drawday:i];
-        }
+		for(int c=0;c<7;c++)
+		{
+            [self drawday:day col:c row:r];
+			day=[day addTimeInterval:oneDay];
+		}
     }
 }
 
@@ -204,6 +201,32 @@ int numberofDayInMonthForYear(int aMonth,int aYear)
 - (void)setTarget:(id) aTarget
 {
     target=aTarget;
+}
+
+- (NSDate *)getFirstDayOfCalendar{
+	NSDate *day = [self date];
+	NSCalendar *gregorian = [[NSCalendar alloc] initWithCalendarIdentifier:NSGregorianCalendar];
+	NSDate *beginningOfMonth = nil;
+	NSDate *beginningOfWeek = nil;
+	[gregorian rangeOfUnit:kCFCalendarUnitMonth startDate:&beginningOfMonth interval:NULL forDate: day];
+	[gregorian rangeOfUnit:NSWeekCalendarUnit startDate:&beginningOfWeek interval:NULL forDate: beginningOfMonth];
+	NSLog(@"[getFirstDayOfCalendar] %@",beginningOfMonth);
+	NSLog(@"[getFirstDayOfCalendar] %@",beginningOfWeek);
+	return [beginningOfWeek retain];
+}
+
+- (IBAction) prevMonth: sender{
+	NSDateComponents *components = [[[NSDateComponents alloc] init] autorelease];
+	components.month = -1;
+	NSDate *oneMonthFromNow = [[NSCalendar currentCalendar] dateByAddingComponents:components toDate:[self date] options:0];
+	[self setDate:oneMonthFromNow];
+}
+
+- (IBAction) nextMonth: sender{
+	NSDateComponents *components = [[[NSDateComponents alloc] init] autorelease];
+	components.month = 1;
+	NSDate *oneMonthFromNow = [[NSCalendar currentCalendar] dateByAddingComponents:components toDate:[self date] options:0];
+	[self setDate:oneMonthFromNow];
 }
 
 @end
