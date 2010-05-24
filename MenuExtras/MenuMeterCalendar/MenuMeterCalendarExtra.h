@@ -14,12 +14,14 @@
 #import "MenuMeterCalendarView.h"
 
 @interface MenuMeterCalendarExtra : NSMenuExtra {
-
+	
 	NSMenu *theMenu;
 	MenuMeterCalendarView *theView;
 	NSViewController *calendarVC;
+	NSTimer *updateTimer;
 }
 
 -(NSDate*)oneWeekLater;
+- (void)updateDisplay:(NSTimer *)timer;
 
 @end

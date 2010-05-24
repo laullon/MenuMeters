@@ -71,6 +71,10 @@ int numberofDayInMonthForYear(int aMonth,int aYear)
     return self;
 }
 
+- (void)awakeFromNib{
+	[self setDate:[NSDate date]];
+}
+
 - (void)dealloc
 {
     [currentDate release];
@@ -85,7 +89,6 @@ int numberofDayInMonthForYear(int aMonth,int aYear)
 
 - (void)setDate:(NSDate *) aDate
 {
-	
     if (aDate!=nil)
     {        
         if (currentDate!=nil)
@@ -97,9 +100,16 @@ int numberofDayInMonthForYear(int aMonth,int aYear)
 		
 		NSDateFormatter* theDateFormatter = [[[NSDateFormatter alloc] init] autorelease];
 		[theDateFormatter setFormatterBehavior:NSDateFormatterBehavior10_4];
-		[theDateFormatter setDateFormat:@"MMMM"];
+		[theDateFormatter setDateFormat:@"MMMM yyyy"];		
 		[month setStringValue:[theDateFormatter stringFromDate:aDate]];
 
+		[theDateFormatter setFormatterBehavior:NSDateFormatterBehavior10_4];
+		[theDateFormatter setDateStyle:NSDateFormatterLongStyle];
+		NSAttributedString *title=[NSAttributedString alloc];
+		NSString *now=[theDateFormatter stringForObjectValue:[NSDate date]];
+		[title initWithString:now];
+		[todayDate setAttributedTitle:title];
+		
         [self setNeedsDisplay:YES];
     }
 }
@@ -118,7 +128,7 @@ int numberofDayInMonthForYear(int aMonth,int aYear)
     
 	//XXX arreglar esto
 	NSDate *today=[NSDate date];
-	NSLog(@" %@ == %@ > %@",today,day,[today isEqualToDate:day]);
+	//NSLog(@" %@ == %@ > %@",today,day,[today isEqualToDate:day]);
     if ([today isEqualToDate:day])
     {
         NSRect tHiliteRect;
@@ -210,8 +220,8 @@ int numberofDayInMonthForYear(int aMonth,int aYear)
 	NSDate *beginningOfWeek = nil;
 	[gregorian rangeOfUnit:kCFCalendarUnitMonth startDate:&beginningOfMonth interval:NULL forDate: day];
 	[gregorian rangeOfUnit:NSWeekCalendarUnit startDate:&beginningOfWeek interval:NULL forDate: beginningOfMonth];
-	NSLog(@"[getFirstDayOfCalendar] %@",beginningOfMonth);
-	NSLog(@"[getFirstDayOfCalendar] %@",beginningOfWeek);
+	//NSLog(@"[getFirstDayOfCalendar] %@",beginningOfMonth);
+	//NSLog(@"[getFirstDayOfCalendar] %@",beginningOfWeek);
 	return [beginningOfWeek retain];
 }
 
@@ -228,5 +238,10 @@ int numberofDayInMonthForYear(int aMonth,int aYear)
 	NSDate *oneMonthFromNow = [[NSCalendar currentCalendar] dateByAddingComponents:components toDate:[self date] options:0];
 	[self setDate:oneMonthFromNow];
 }
+
+- (IBAction) goToday: sender{
+	[self setDate:[NSDate date]];
+}
+
 
 @end

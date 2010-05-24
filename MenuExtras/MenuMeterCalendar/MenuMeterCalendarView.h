@@ -10,7 +10,7 @@
 #import "AppleUndocumented.h"
 
 @interface MenuMeterCalendarView : NSMenuExtraView {
-
+	NSMenuExtra 	*menuExtra;
 }
 
 @end

@@ -32,6 +32,7 @@
     NSDictionary *dayOfWeekAttributes;
 	NSDictionary *otherMonthAttributes;
 	IBOutlet NSTextField* month;
+	IBOutlet NSButton* todayDate;
 }
 
 - (NSDate *) date;
@@ -46,5 +47,6 @@
 
 - (IBAction) prevMonth: sender;
 - (IBAction) nextMonth: sender;
+- (IBAction) goToday: sender;
 
 @end

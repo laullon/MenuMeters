@@ -23,7 +23,7 @@
     theView = [[MenuMeterCalendarView alloc] initWithFrame:
 			   [[self view] frame] menuExtra:self];
     [self setView:theView];
-    
+	    
     // prepare "dummy" menu, without any actions
     theMenu = [[NSMenu alloc] initWithTitle: @""];
     [theMenu setAutoenablesItems: NO];
@@ -31,6 +31,11 @@
     [theMenu addItemWithTitle: @"2" action: nil keyEquivalent: @""];
     [theMenu addItemWithTitle: @"3" action: nil keyEquivalent: @""];
 	
+	updateTimer = [NSTimer scheduledTimerWithTimeInterval:1
+												   target:self
+												 selector:@selector(updateDisplay:)
+												 userInfo:nil
+												  repeats:YES];
 	NSLog(@"MenuMeterCalendar loaded.");
     return self;
 }
@@ -40,8 +45,13 @@
 	while ([theMenu numberOfItems]) {
 		[theMenu removeItemAtIndex:0];
 	}
+	NSMenuItem *item = (NSMenuItem *)[theMenu addItemWithTitle:@"" 
+														action: nil 
+												 keyEquivalent: @""];
 	
-	CalCalendarStore *calendarStore = [CalCalendarStore defaultCalendarStore];
+	[item setView:[calendarVC view]];	
+	
+	/*CalCalendarStore *calendarStore = [CalCalendarStore defaultCalendarStore];
 	NSPredicate *eventsForThisYear = [CalCalendarStore eventPredicateWithStartDate:[NSDate date] 
 																		   endDate:[self oneWeekLater] 
 																		 calendars:[calendarStore calendars]];
@@ -56,7 +66,7 @@
 			[item setView:[calendarVC view]];
 			break;
 		}
-	}
+	}*/
 	
 	return theMenu;
 }
@@ -76,6 +86,10 @@
 	NSDate *res=[today addTimeInterval:oneWeek];
 	NSLog(@"endOfWeek = %@",res);
     return res;
+}
+
+- (void)updateDisplay:(NSTimer *)timer {
+	[theView setNeedsDisplay:YES];
 }
 
 @end
