@@ -1,0 +1,7 @@
+build/*
+*.mode1v3
+
+# osx noise
+.DS_Store
+profile
+
