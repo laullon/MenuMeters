@@ -563,16 +563,24 @@ static void scChangeCallback(SCDynamicStoreRef store, CFArrayRef changedKeys, vo
 
 } // memPrefChange
 
+- (IBAction)calPrefChange:(id)sender{
+	if (([calendarToggle state] == NSOnState) && ![self isExtraWithBundleIDLoaded:kCalMenuBundleID]) {
+		[self loadExtraAtURL:kCalMenuURL withID:kCalMenuBundleID];
+	}
+	else if (([calendarToggle state] == NSOffState) && [self isExtraWithBundleIDLoaded:kCalMenuBundleID]) {
+		[self removeExtraWithBundleID:kCalMenuBundleID];
+	}
+	[calendarToggle setState:([self isExtraWithBundleIDLoaded:kCalMenuBundleID] ? NSOnState : NSOffState)];
+}
+
 - (IBAction)netPrefChange:(id)sender {
 
 	// Extra load
 	if (([netMeterToggle state] == NSOnState) && ![self isExtraWithBundleIDLoaded:kNetMenuBundleID]) {
 		[self loadExtraAtURL:kNetMenuURL withID:kNetMenuBundleID];
-		[self loadExtraAtURL:kCalMenuURL withID:kCalMenuBundleID];
 	}
 	else if (([netMeterToggle state] == NSOffState) && [self isExtraWithBundleIDLoaded:kNetMenuBundleID]) {
 		[self removeExtraWithBundleID:kNetMenuBundleID];
-		[self removeExtraWithBundleID:kCalMenuBundleID];
 	}
 	[netMeterToggle setState:([self isExtraWithBundleIDLoaded:kNetMenuBundleID] ? NSOnState : NSOffState)];
 

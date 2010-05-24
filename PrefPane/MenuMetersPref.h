@@ -109,6 +109,8 @@
 	IBOutlet NSColorWell			*netTxColor;
 	IBOutlet NSColorWell			*netRxColor;
 	IBOutlet NSColorWell			*netInactiveColor;
+	// Calensar pane controls
+	IBOutlet NSButton				*calendarToggle;
 	
 } // MenuMetersPref
 
@@ -123,5 +125,6 @@
 - (IBAction)diskPrefChange:(id)sender;
 - (IBAction)memPrefChange:(id)sender;
 - (IBAction)netPrefChange:(id)sender;
+- (IBAction)calPrefChange:(id)sender;
 
 @end
