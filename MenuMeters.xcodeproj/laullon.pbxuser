@@ -1,0 +1,197 @@
+// !$*UTF8*$!
+{
+	31EF5B8D11AA542F00DF7B20 /* Installer */ = {
+		isa = PBXExecutable;
+		activeArgIndices = (
+		);
+		argumentStrings = (
+		);
+		autoAttachOnCrash = 1;
+		breakpointsEnabled = 0;
+		configStateDict = {
+		};
+		customDataFormattersEnabled = 1;
+		dataTipCustomDataFormattersEnabled = 1;
+		dataTipShowTypeColumn = 1;
+		dataTipSortType = 0;
+		debuggerPlugin = GDBDebugging;
+		disassemblyDisplayState = 0;
+		dylibVariantSuffix = "";
+		enableDebugStr = 1;
+		environmentEntries = (
+		);
+		executableSystemSymbolLevel = 0;
+		executableUserSymbolLevel = 0;
+		libgmallocEnabled = 0;
+		name = Installer;
+		savedGlobals = {
+		};
+		showTypeColumn = 0;
+		sourceDirectories = (
+		);
+	};
+	31EF5B8E11AA542F00DF7B20 /* Install Tool */ = {
+		isa = PBXExecutable;
+		activeArgIndices = (
+		);
+		argumentStrings = (
+		);
+		autoAttachOnCrash = 1;
+		breakpointsEnabled = 0;
+		configStateDict = {
+		};
+		customDataFormattersEnabled = 1;
+		dataTipCustomDataFormattersEnabled = 1;
+		dataTipShowTypeColumn = 1;
+		dataTipSortType = 0;
+		debuggerPlugin = GDBDebugging;
+		disassemblyDisplayState = 0;
+		enableDebugStr = 1;
+		environmentEntries = (
+		);
+		executableSystemSymbolLevel = 0;
+		executableUserSymbolLevel = 0;
+		libgmallocEnabled = 0;
+		name = "Install Tool";
+		showTypeColumn = 0;
+		sourceDirectories = (
+		);
+	};
+	31EF5B9811AA543100DF7B20 /* Source Control */ = {
+		isa = PBXSourceControlManager;
+		fallbackIsa = XCSourceControlManager;
+		isSCMEnabled = 0;
+		scmConfiguration = {
+			repositoryNamesForRoots = {
+				"" = "";
+			};
+		};
+	};
+	31EF5B9911AA543100DF7B20 /* Code sense */ = {
+		isa = PBXCodeSenseManager;
+		indexTemplatePath = "";
+	};
+	31EF5B9F11AA54AA00DF7B20 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = D4E4C01A04F3420700A87BC9 /* InstallerAppMain.m */;
+		name = "InstallerAppMain.m: 1";
+		rLen = 0;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 918;
+		vrLoc = 0;
+	};
+	31EF5BA011AA54AA00DF7B20 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = D4E4C01904F3420700A87BC9 /* InstallerApp.m */;
+		name = "InstallerApp.m: 1";
+		rLen = 0;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 1156;
+		vrLoc = 0;
+	};
+	31EF5BAC11AA557A00DF7B20 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = D4E4C01904F3420700A87BC9 /* InstallerApp.m */;
+		name = "InstallerApp.m: 562";
+		rLen = 0;
+		rLoc = 15898;
+		rType = 0;
+		vrLen = 1024;
+		vrLoc = 6598;
+	};
+	D40DB4A703D25F2100A87BC9 /* Project object */ = {
+		activeBuildConfigurationName = Release;
+		activeExecutable = 31EF5B8D11AA542F00DF7B20 /* Installer */;
+		activeSDKPreference = macosx10.5;
+		activeTarget = D4ECB3CB05FE736D00954E26 /* Installer */;
+		codeSenseManager = 31EF5B9911AA543100DF7B20 /* Code sense */;
+		executables = (
+			31EF5B8D11AA542F00DF7B20 /* Installer */,
+			31EF5B8E11AA542F00DF7B20 /* Install Tool */,
+		);
+		perUserDictionary = {
+			PBXConfiguration.PBXFileTableDataSource3.PBXFileTableDataSource = {
+				PBXFileTableDataSourceColumnSortingDirectionKey = "-1";
+				PBXFileTableDataSourceColumnSortingKey = PBXFileDataSource_Filename_ColumnID;
+				PBXFileTableDataSourceColumnWidthsKey = (
+					20,
+					891,
+					20,
+					48.16259765625,
+					43,
+					43,
+					20,
+				);
+				PBXFileTableDataSourceColumnsKey = (
+					PBXFileDataSource_FiletypeID,
+					PBXFileDataSource_Filename_ColumnID,
+					PBXFileDataSource_Built_ColumnID,
+					PBXFileDataSource_ObjectSize_ColumnID,
+					PBXFileDataSource_Errors_ColumnID,
+					PBXFileDataSource_Warnings_ColumnID,
+					PBXFileDataSource_Target_ColumnID,
+				);
+			};
+			PBXPerProjectTemplateStateSaveDate = 296375343;
+			PBXWorkspaceStateSaveDate = 296375343;
+		};
+		perUserProjectItems = {
+			31EF5B9F11AA54AA00DF7B20 /* PBXTextBookmark */ = 31EF5B9F11AA54AA00DF7B20 /* PBXTextBookmark */;
+			31EF5BA011AA54AA00DF7B20 /* PBXTextBookmark */ = 31EF5BA011AA54AA00DF7B20 /* PBXTextBookmark */;
+			31EF5BAC11AA557A00DF7B20 /* PBXTextBookmark */ = 31EF5BAC11AA557A00DF7B20 /* PBXTextBookmark */;
+		};
+		sourceControlManager = 31EF5B9811AA543100DF7B20 /* Source Control */;
+		userBuildSettings = {
+		};
+	};
+	D4E4C01904F3420700A87BC9 /* InstallerApp.m */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1069, 7475}}";
+			sepNavSelRange = "{15898, 0}";
+			sepNavVisRange = "{6598, 1024}";
+			sepNavWindowFrame = "{{69, 166}, {1255, 857}}";
+		};
+	};
+	D4E4C01A04F3420700A87BC9 /* InstallerAppMain.m */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1069, 495}}";
+			sepNavSelRange = "{0, 0}";
+			sepNavVisRange = "{0, 918}";
+		};
+	};
+	D4EB673A04F5B18100A87BC9 /* Package */ = {
+		activeExec = 0;
+	};
+	D4ECB2BB05FE6F3F00954E26 /* Defaults Bundle */ = {
+		activeExec = 0;
+	};
+	D4ECB2CD05FE700600954E26 /* Net Meter */ = {
+		activeExec = 0;
+	};
+	D4ECB2EE05FE707A00954E26 /* Memory Meter */ = {
+		activeExec = 0;
+	};
+	D4ECB34405FE712E00954E26 /* Disk Meter */ = {
+		activeExec = 0;
+	};
+	D4ECB37205FE718D00954E26 /* CPU Meter */ = {
+		activeExec = 0;
+	};
+	D4ECB39105FE72E100954E26 /* PrefPane */ = {
+		activeExec = 0;
+	};
+	D4ECB3BE05FE735400954E26 /* Install Tool */ = {
+		activeExec = 0;
+		executables = (
+			31EF5B8E11AA542F00DF7B20 /* Install Tool */,
+		);
+	};
+	D4ECB3CB05FE736D00954E26 /* Installer */ = {
+		activeExec = 0;
+		executables = (
+			31EF5B8D11AA542F00DF7B20 /* Installer */,
+		);
+	};
+}
