@@ -59,6 +59,8 @@
 		return nil;
 	}
 	
+	NSLog(@"MenuMeterDiskExtra bundel = %@",bundle);
+
 	// Panther check
 	SInt32 systemVersion = 0;
 	OSStatus err = Gestalt(gestaltSystemVersion, &systemVersion);

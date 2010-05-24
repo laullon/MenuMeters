@@ -7,6 +7,20 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3118B5A611A7C92300E8454D /* CalendarControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 3118B5A311A7C92300E8454D /* CalendarControl.m */; };
+		3168FACC11A6503E00CEDA37 /* SystemUIPlugin.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3168FACB11A6503E00CEDA37 /* SystemUIPlugin.framework */; };
+		3168FACD11A6504900CEDA37 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D403ADE20E04F17900348443 /* Cocoa.framework */; };
+		3168FACE11A6504D00CEDA37 /* Carbon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D403ADEB0E04F19C00348443 /* Carbon.framework */; };
+		3168FACF11A6505B00CEDA37 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D403ADF30E04F1E100348443 /* SystemConfiguration.framework */; };
+		3168FAD011A6506C00CEDA37 /* IOKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D478F451101A8AE100C79173 /* IOKit.framework */; };
+		3168FB3411A6521E00CEDA37 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3168FB3311A6521E00CEDA37 /* Info.plist */; };
+		3168FB4C11A653A000CEDA37 /* MenuMeterCalendarExtra.m in Sources */ = {isa = PBXBuildFile; fileRef = 3168FB4B11A653A000CEDA37 /* MenuMeterCalendarExtra.m */; };
+		31D08ECA11AA073500F55B12 /* MenuMetersPref.xib in Resources */ = {isa = PBXBuildFile; fileRef = 31D08EC811AA073500F55B12 /* MenuMetersPref.xib */; };
+		31D08ECB11AA073500F55B12 /* MenuMetersPref.xib in Resources */ = {isa = PBXBuildFile; fileRef = 31D08EC811AA073500F55B12 /* MenuMetersPref.xib */; };
+		31EAAEAF11A7326200032C40 /* MenuMeterCalendarView.m in Sources */ = {isa = PBXBuildFile; fileRef = 31EAAEAE11A7326200032C40 /* MenuMeterCalendarView.m */; };
+		31EAAEE011A733CB00032C40 /* MenuMeterCalendar.menu in Resources */ = {isa = PBXBuildFile; fileRef = 3168FAC411A64F7600CEDA37 /* MenuMeterCalendar.menu */; };
+		31EAAF1C11A73A1B00032C40 /* CalendarStore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 31EAAF1B11A73A1B00032C40 /* CalendarStore.framework */; };
+		31EAAFA211A74C5E00032C40 /* Calendar.xib in Resources */ = {isa = PBXBuildFile; fileRef = 31EAAFA111A74C5E00032C40 /* Calendar.xib */; };
 		D403AD3C0E04E99C00348443 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D403AD3B0E04E99C00348443 /* Foundation.framework */; };
 		D403ADE30E04F17900348443 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D403ADE20E04F17900348443 /* Cocoa.framework */; };
 		D403ADE40E04F18400348443 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D403ADE20E04F17900348443 /* Cocoa.framework */; };
@@ -118,7 +132,6 @@
 		D4ECB39D05FE72E100954E26 /* MenuMeters.h in Headers */ = {isa = PBXBuildFile; fileRef = D4510D9104F2F0FD00A87BC9 /* MenuMeters.h */; };
 		D4ECB39E05FE72E100954E26 /* MenuMetersPref.h in Headers */ = {isa = PBXBuildFile; fileRef = D4E4BFA004F333B100A87BC9 /* MenuMetersPref.h */; };
 		D4ECB3A105FE72E100954E26 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = D4E4BF8F04F333B100A87BC9 /* Localizable.strings */; };
-		D4ECB3A205FE72E100954E26 /* MenuMetersPref.nib in Resources */ = {isa = PBXBuildFile; fileRef = D4E4BF9104F333B100A87BC9 /* MenuMetersPref.nib */; };
 		D4ECB3A305FE72E100954E26 /* MenuMetersPref.tiff in Resources */ = {isa = PBXBuildFile; fileRef = D4E4BF9B04F333B100A87BC9 /* MenuMetersPref.tiff */; };
 		D4ECB3A405FE72E100954E26 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = D4E4BF9C04F333B100A87BC9 /* InfoPlist.strings */; };
 		D4ECB3A505FE72E100954E26 /* CubeRootScale.tiff in Resources */ = {isa = PBXBuildFile; fileRef = D4E4BFA704F333B100A87BC9 /* CubeRootScale.tiff */; };
@@ -148,6 +161,20 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		3168FAC911A6502B00CEDA37 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D40DB4A703D25F2100A87BC9 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D4ECB2BB05FE6F3F00954E26;
+			remoteInfo = "Defaults Bundle";
+		};
+		3168FE9611A66B1C00CEDA37 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D40DB4A703D25F2100A87BC9 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 3168FAC311A64F7600CEDA37;
+			remoteInfo = Calendar;
+		};
 		D46DB6AD054E290E001EF699 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = D40DB4A703D25F2100A87BC9 /* Project object */;
@@ -234,13 +261,38 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		313C963211A7741D00B14479 /* Copy frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+			);
+			name = "Copy frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		3118B5A211A7C92300E8454D /* CalendarControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CalendarControl.h; path = MenuExtras/MenuMeterCalendar/CalendarControl.h; sourceTree = "<group>"; };
+		3118B5A311A7C92300E8454D /* CalendarControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CalendarControl.m; path = MenuExtras/MenuMeterCalendar/CalendarControl.m; sourceTree = "<group>"; };
+		3168FAA611A64EBD00CEDA37 /* Info copy.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "Info copy.plist"; path = "MenuExtras/MenuMeterCPU/Info copy.plist"; sourceTree = "<group>"; };
+		3168FAC411A64F7600CEDA37 /* MenuMeterCalendar.menu */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MenuMeterCalendar.menu; sourceTree = BUILT_PRODUCTS_DIR; };
+		3168FACB11A6503E00CEDA37 /* SystemUIPlugin.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemUIPlugin.framework; path = System/Library/PrivateFrameworks/SystemUIPlugin.framework; sourceTree = SDKROOT; };
+		3168FB3311A6521E00CEDA37 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3168FB4A11A653A000CEDA37 /* MenuMeterCalendarExtra.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MenuMeterCalendarExtra.h; path = MenuExtras/MenuMeterCalendar/MenuMeterCalendarExtra.h; sourceTree = "<group>"; };
+		3168FB4B11A653A000CEDA37 /* MenuMeterCalendarExtra.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MenuMeterCalendarExtra.m; path = MenuExtras/MenuMeterCalendar/MenuMeterCalendarExtra.m; sourceTree = "<group>"; };
+		31D08EC911AA073500F55B12 /* English */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = English; path = English.lproj/MenuMetersPref.xib; sourceTree = "<group>"; };
+		31EAAEAD11A7326200032C40 /* MenuMeterCalendarView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MenuMeterCalendarView.h; path = MenuExtras/MenuMeterCalendar/MenuMeterCalendarView.h; sourceTree = "<group>"; };
+		31EAAEAE11A7326200032C40 /* MenuMeterCalendarView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MenuMeterCalendarView.m; path = MenuExtras/MenuMeterCalendar/MenuMeterCalendarView.m; sourceTree = "<group>"; };
+		31EAAF1B11A73A1B00032C40 /* CalendarStore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CalendarStore.framework; path = System/Library/Frameworks/CalendarStore.framework; sourceTree = SDKROOT; };
+		31EAAFA111A74C5E00032C40 /* Calendar.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Calendar.xib; path = MenuExtras/MenuMeterCalendar/Calendar.xib; sourceTree = "<group>"; };
 		D40138A204F738D100A87BC9 /* Japanese */ = {isa = PBXFileReference; lastKnownFileType = wrapper.nib; name = Japanese; path = Japanese.lproj/Installer.nib; sourceTree = "<group>"; };
 		D40138A304F738D700A87BC9 /* Japanese */ = {isa = PBXFileReference; fileEncoding = 10; lastKnownFileType = text.plist.strings; lineEnding = 0; name = Japanese; path = Japanese.lproj/Localizable.strings; sourceTree = "<group>"; };
 		D40138D504F7B1DD00A87BC9 /* French */ = {isa = PBXFileReference; lastKnownFileType = wrapper.nib; name = French; path = French.lproj/Installer.nib; sourceTree = "<group>"; };
 		D40138D604F7B1E100A87BC9 /* French */ = {isa = PBXFileReference; fileEncoding = 10; lastKnownFileType = text.plist.strings; lineEnding = 0; name = French; path = French.lproj/Localizable.strings; sourceTree = "<group>"; };
 		D40271B8083D928600D09108 /* nl */ = {isa = PBXFileReference; fileEncoding = 10; lastKnownFileType = text.plist.strings; lineEnding = 0; name = nl; path = nl.lproj/Localizable.strings; sourceTree = "<group>"; };
-		D40271BB083D92C500D09108 /* nl */ = {isa = PBXFileReference; lastKnownFileType = wrapper.nib; name = nl; path = nl.lproj/MenuMetersPref.nib; sourceTree = "<group>"; };
 		D40271BE083D9C0500D09108 /* nl */ = {isa = PBXFileReference; fileEncoding = 10; lastKnownFileType = text.plist.strings; lineEnding = 0; name = nl; path = MenuExtras/MenuMeterCPU/nl.lproj/Localizable.strings; sourceTree = "<group>"; };
 		D403AD3B0E04E99C00348443 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		D403ADE20E04F17900348443 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
@@ -285,7 +337,6 @@
 		D44B19A30722F96900B03EFB /* Italian */ = {isa = PBXFileReference; lastKnownFileType = wrapper.nib; name = Italian; path = Italian.lproj/Installer.nib; sourceTree = "<group>"; };
 		D44B19A40722F97800B03EFB /* Italian */ = {isa = PBXFileReference; fileEncoding = 10; lastKnownFileType = text.plist.strings; lineEnding = 0; name = Italian; path = Italian.lproj/Localizable.strings; sourceTree = "<group>"; };
 		D44B19A70722FA3900B03EFB /* Italian */ = {isa = PBXFileReference; fileEncoding = 10; lastKnownFileType = text.plist.strings; lineEnding = 0; name = Italian; path = Italian.lproj/Localizable.strings; sourceTree = "<group>"; };
-		D44B19A80722FA4200B03EFB /* Italian */ = {isa = PBXFileReference; lastKnownFileType = wrapper.nib; name = Italian; path = Italian.lproj/MenuMetersPref.nib; sourceTree = "<group>"; };
 		D44B19A90722FAA600B03EFB /* Italian */ = {isa = PBXFileReference; fileEncoding = 10; lastKnownFileType = text.plist.strings; lineEnding = 0; name = Italian; path = MenuExtras/MenuMeterCPU/Italian.lproj/Localizable.strings; sourceTree = "<group>"; };
 		D44B19AA0722FAE600B03EFB /* Italian */ = {isa = PBXFileReference; fileEncoding = 10; lastKnownFileType = text.plist.strings; lineEnding = 0; name = Italian; path = MenuExtras/MenuMeterDisk/Italian.lproj/Localizable.strings; sourceTree = "<group>"; };
 		D44B19AB0722FB2300B03EFB /* Italian */ = {isa = PBXFileReference; fileEncoding = 10; lastKnownFileType = text.plist.strings; lineEnding = 0; name = Italian; path = MenuExtras/MenuMeterMem/Italian.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -293,7 +344,6 @@
 		D44C05D909A1A59200C388AF /* zh_CN */ = {isa = PBXFileReference; fileEncoding = 10; lastKnownFileType = text.plist.strings; lineEnding = 0; name = zh_CN; path = zh_CN.lproj/Localizable.strings; sourceTree = "<group>"; };
 		D44C05DE09A1A5A400C388AF /* zh_CN */ = {isa = PBXFileReference; lastKnownFileType = wrapper.nib; name = zh_CN; path = zh_CN.lproj/Installer.nib; sourceTree = "<group>"; };
 		D44C05E509A1A66E00C388AF /* zh_CN */ = {isa = PBXFileReference; fileEncoding = 10; lastKnownFileType = text.plist.strings; lineEnding = 0; name = zh_CN; path = zh_CN.lproj/Localizable.strings; sourceTree = "<group>"; };
-		D44C05E809A1A67400C388AF /* zh_CN */ = {isa = PBXFileReference; lastKnownFileType = wrapper.nib; name = zh_CN; path = zh_CN.lproj/MenuMetersPref.nib; sourceTree = "<group>"; };
 		D44C05EF09A1AA7400C388AF /* zh_CN */ = {isa = PBXFileReference; fileEncoding = 10; lastKnownFileType = text.plist.strings; lineEnding = 0; name = zh_CN; path = MenuExtras/MenuMeterCPU/zh_CN.lproj/Localizable.strings; sourceTree = "<group>"; };
 		D44C05F209A1AB8100C388AF /* zh_CN */ = {isa = PBXFileReference; fileEncoding = 10; lastKnownFileType = text.plist.strings; lineEnding = 0; name = zh_CN; path = MenuExtras/MenuMeterDisk/zh_CN.lproj/Localizable.strings; sourceTree = "<group>"; };
 		D44C05F509A1ABF600C388AF /* zh_CN */ = {isa = PBXFileReference; fileEncoding = 10; lastKnownFileType = text.plist.strings; lineEnding = 0; name = zh_CN; path = MenuExtras/MenuMeterMem/zh_CN.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -353,15 +403,11 @@
 		D4E0E78D04FEDFC8007A95BB /* German */ = {isa = PBXFileReference; lastKnownFileType = wrapper.nib; name = German; path = German.lproj/Installer.nib; sourceTree = "<group>"; };
 		D4E0E78E04FEDFCE007A95BB /* German */ = {isa = PBXFileReference; fileEncoding = 10; lastKnownFileType = text.plist.strings; lineEnding = 0; name = German; path = German.lproj/Localizable.strings; sourceTree = "<group>"; };
 		D4E4BF9004F333B100A87BC9 /* English */ = {isa = PBXFileReference; fileEncoding = 10; lastKnownFileType = text.plist.strings; lineEnding = 0; name = English; path = English.lproj/Localizable.strings; sourceTree = "<group>"; };
-		D4E4BF9204F333B100A87BC9 /* English */ = {isa = PBXFileReference; lastKnownFileType = wrapper.nib; name = English; path = English.lproj/MenuMetersPref.nib; sourceTree = "<group>"; };
 		D4E4BF9404F333B100A87BC9 /* French */ = {isa = PBXFileReference; fileEncoding = 10; lastKnownFileType = text.plist.strings; lineEnding = 0; name = French; path = French.lproj/Localizable.strings; sourceTree = "<group>"; };
-		D4E4BF9504F333B100A87BC9 /* French */ = {isa = PBXFileReference; lastKnownFileType = wrapper.nib; name = French; path = French.lproj/MenuMetersPref.nib; sourceTree = "<group>"; };
 		D4E4BF9704F333B100A87BC9 /* German */ = {isa = PBXFileReference; fileEncoding = 10; lastKnownFileType = text.plist.strings; lineEnding = 0; name = German; path = German.lproj/Localizable.strings; sourceTree = "<group>"; };
-		D4E4BF9804F333B100A87BC9 /* German */ = {isa = PBXFileReference; lastKnownFileType = wrapper.nib; name = German; path = German.lproj/MenuMetersPref.nib; sourceTree = "<group>"; };
 		D4E4BF9B04F333B100A87BC9 /* MenuMetersPref.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = MenuMetersPref.tiff; sourceTree = "<group>"; };
 		D4E4BF9C04F333B100A87BC9 /* InfoPlist.strings */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = text.plist.strings; path = InfoPlist.strings; sourceTree = "<group>"; };
 		D4E4BF9E04F333B100A87BC9 /* Japanese */ = {isa = PBXFileReference; fileEncoding = 10; lastKnownFileType = text.plist.strings; lineEnding = 0; name = Japanese; path = Japanese.lproj/Localizable.strings; sourceTree = "<group>"; };
-		D4E4BF9F04F333B100A87BC9 /* Japanese */ = {isa = PBXFileReference; lastKnownFileType = wrapper.nib; name = Japanese; path = Japanese.lproj/MenuMetersPref.nib; sourceTree = "<group>"; };
 		D4E4BFA004F333B100A87BC9 /* MenuMetersPref.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = MenuMetersPref.h; sourceTree = "<group>"; };
 		D4E4BFA104F333B100A87BC9 /* MenuMetersPref.m */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.objc; path = MenuMetersPref.m; sourceTree = "<group>"; };
 		D4E4BFA704F333B100A87BC9 /* CubeRootScale.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = CubeRootScale.tiff; sourceTree = "<group>"; };
@@ -406,6 +452,19 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		3168FAC211A64F7600CEDA37 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3168FACC11A6503E00CEDA37 /* SystemUIPlugin.framework in Frameworks */,
+				3168FACD11A6504900CEDA37 /* Cocoa.framework in Frameworks */,
+				3168FACE11A6504D00CEDA37 /* Carbon.framework in Frameworks */,
+				3168FACF11A6505B00CEDA37 /* SystemConfiguration.framework in Frameworks */,
+				3168FAD011A6506C00CEDA37 /* IOKit.framework in Frameworks */,
+				31EAAF1C11A73A1B00032C40 /* CalendarStore.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		D4ECB2C205FE6F3F00954E26 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -495,6 +554,29 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3168FAE911A6513600CEDA37 /* MenuMeterCalendar */ = {
+			isa = PBXGroup;
+			children = (
+				3118B5A211A7C92300E8454D /* CalendarControl.h */,
+				3118B5A311A7C92300E8454D /* CalendarControl.m */,
+				31EAAFA111A74C5E00032C40 /* Calendar.xib */,
+				3168FAEA11A6514900CEDA37 /* Resource */,
+				31EAAEAD11A7326200032C40 /* MenuMeterCalendarView.h */,
+				31EAAEAE11A7326200032C40 /* MenuMeterCalendarView.m */,
+				3168FB4A11A653A000CEDA37 /* MenuMeterCalendarExtra.h */,
+				3168FB4B11A653A000CEDA37 /* MenuMeterCalendarExtra.m */,
+			);
+			name = MenuMeterCalendar;
+			sourceTree = "<group>";
+		};
+		3168FAEA11A6514900CEDA37 /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				3168FB3311A6521E00CEDA37 /* Info.plist */,
+			);
+			name = Resource;
+			sourceTree = "<group>";
+		};
 		D40DB4A303D25F2100A87BC9 = {
 			isa = PBXGroup;
 			children = (
@@ -509,12 +591,15 @@
 				D40DB4B803D2600C00A87BC9 /* System Frameworks */,
 				D40DB50803D262ED00A87BC9 /* System Private Frameworks */,
 				D40DB4B003D25F6400A87BC9 /* Products */,
+				3168FACB11A6503E00CEDA37 /* SystemUIPlugin.framework */,
+				31EAAF1B11A73A1B00032C40 /* CalendarStore.framework */,
 			);
 			sourceTree = "<group>";
 		};
 		D40DB4A903D25F4C00A87BC9 /* MenuExtras */ = {
 			isa = PBXGroup;
 			children = (
+				3168FAE911A6513600CEDA37 /* MenuMeterCalendar */,
 				D477AAD603D4B9DE00A87BC9 /* MenuMeterCPU */,
 				D42EC94703D498CC00A87BC9 /* MenuMeterDisk */,
 				D45F12C503D4886000A87BC9 /* MenuMeterMem */,
@@ -526,6 +611,7 @@
 		D40DB4B003D25F6400A87BC9 /* Products */ = {
 			isa = PBXGroup;
 			children = (
+				3168FAC411A64F7600CEDA37 /* MenuMeterCalendar.menu */,
 				D4ECB2C805FE6F4000954E26 /* MenuMeterDefaults.bundle */,
 				D4ECB2EA05FE700600954E26 /* MenuMeterNet.menu */,
 				D4ECB30505FE707A00954E26 /* MenuMeterMem.menu */,
@@ -708,6 +794,7 @@
 			children = (
 				D4ECB38E05FE71B000954E26 /* Info.plist */,
 				D477AAFF03D4BEB400A87BC9 /* Localizable.strings */,
+				3168FAA611A64EBD00CEDA37 /* Info copy.plist */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -753,10 +840,10 @@
 		D4E4BFB904F333D000A87BC9 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				31D08EC811AA073500F55B12 /* MenuMetersPref.xib */,
 				D4ECB3B705FE730000954E26 /* Info.plist */,
 				D4E4BF9C04F333B100A87BC9 /* InfoPlist.strings */,
 				D4E4BF8F04F333B100A87BC9 /* Localizable.strings */,
-				D4E4BF9104F333B100A87BC9 /* MenuMetersPref.nib */,
 				D4E4BF9904F333B100A87BC9 /* Icon */,
 				D4E4BFA504F333B100A87BC9 /* Scales */,
 			);
@@ -919,6 +1006,25 @@
 /* End PBXLegacyTarget section */
 
 /* Begin PBXNativeTarget section */
+		3168FAC311A64F7600CEDA37 /* Calendar */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3168FAC811A64F7700CEDA37 /* Build configuration list for PBXNativeTarget "Calendar" */;
+			buildPhases = (
+				3168FAC011A64F7600CEDA37 /* Resources */,
+				313C963211A7741D00B14479 /* Copy frameworks */,
+				3168FAC111A64F7600CEDA37 /* Sources */,
+				3168FAC211A64F7600CEDA37 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				3168FACA11A6502B00CEDA37 /* PBXTargetDependency */,
+			);
+			name = Calendar;
+			productName = Calendar;
+			productReference = 3168FAC411A64F7600CEDA37 /* MenuMeterCalendar.menu */;
+			productType = "com.apple.product-type.bundle";
+		};
 		D4ECB2BB05FE6F3F00954E26 /* Defaults Bundle */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = D4AFB32A087726B20023B640 /* Build configuration list for PBXNativeTarget "Defaults Bundle" */;
@@ -1037,6 +1143,7 @@
 				D4ECB3BB05FE733C00954E26 /* PBXTargetDependency */,
 				D4ECB39505FE72E100954E26 /* PBXTargetDependency */,
 				D4ECB3B905FE733700954E26 /* PBXTargetDependency */,
+				3168FE9711A66B1C00CEDA37 /* PBXTargetDependency */,
 			);
 			name = PrefPane;
 			productInstallPath = "$(USER_LIBRARY_DIR)/Bundles";
@@ -1117,11 +1224,22 @@
 				D4ECB2EE05FE707A00954E26 /* Memory Meter */,
 				D4ECB2CD05FE700600954E26 /* Net Meter */,
 				D4ECB2BB05FE6F3F00954E26 /* Defaults Bundle */,
+				3168FAC311A64F7600CEDA37 /* Calendar */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		3168FAC011A64F7600CEDA37 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3168FB3411A6521E00CEDA37 /* Info.plist in Resources */,
+				31EAAFA211A74C5E00032C40 /* Calendar.xib in Resources */,
+				31D08ECA11AA073500F55B12 /* MenuMetersPref.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		D4ECB2BF05FE6F3F00954E26 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -1185,7 +1303,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				D4ECB3A105FE72E100954E26 /* Localizable.strings in Resources */,
-				D4ECB3A205FE72E100954E26 /* MenuMetersPref.nib in Resources */,
 				D4ECB3A305FE72E100954E26 /* MenuMetersPref.tiff in Resources */,
 				D4ECB3A405FE72E100954E26 /* InfoPlist.strings in Resources */,
 				D4ECB3A505FE72E100954E26 /* CubeRootScale.tiff in Resources */,
@@ -1198,6 +1315,8 @@
 				D4ECB4FE05FE7F2400954E26 /* MenuMeterDisk.menu in Resources */,
 				D4ECB4FF05FE7F2500954E26 /* MenuMeterCPU.menu in Resources */,
 				D41C27771048FE9C00A8E325 /* MenuCracker.menu in Resources */,
+				31EAAEE011A733CB00032C40 /* MenuMeterCalendar.menu in Resources */,
+				31D08ECB11AA073500F55B12 /* MenuMetersPref.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1262,6 +1381,16 @@
 /* End PBXRezBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		3168FAC111A64F7600CEDA37 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3168FB4C11A653A000CEDA37 /* MenuMeterCalendarExtra.m in Sources */,
+				31EAAEAF11A7326200032C40 /* MenuMeterCalendarView.m in Sources */,
+				3118B5A611A7C92300E8454D /* CalendarControl.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		D4ECB2C005FE6F3F00954E26 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -1348,6 +1477,16 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		3168FACA11A6502B00CEDA37 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D4ECB2BB05FE6F3F00954E26 /* Defaults Bundle */;
+			targetProxy = 3168FAC911A6502B00CEDA37 /* PBXContainerItemProxy */;
+		};
+		3168FE9711A66B1C00CEDA37 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 3168FAC311A64F7600CEDA37 /* Calendar */;
+			targetProxy = 3168FE9611A66B1C00CEDA37 /* PBXContainerItemProxy */;
+		};
 		D4EB673F04F5C6D700A87BC9 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = D4ECB3CB05FE736D00954E26 /* Installer */;
@@ -1411,6 +1550,14 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		31D08EC811AA073500F55B12 /* MenuMetersPref.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				31D08EC911AA073500F55B12 /* English */,
+			);
+			name = MenuMetersPref.xib;
+			sourceTree = "<group>";
+		};
 		D42EC96E03D49B1D00A87BC9 /* Localizable.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -1467,20 +1614,6 @@
 			name = Localizable.strings;
 			sourceTree = "<group>";
 		};
-		D4E4BF9104F333B100A87BC9 /* MenuMetersPref.nib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				D4E4BF9204F333B100A87BC9 /* English */,
-				D4E4BF9504F333B100A87BC9 /* French */,
-				D4E4BF9804F333B100A87BC9 /* German */,
-				D4E4BF9F04F333B100A87BC9 /* Japanese */,
-				D44B19A80722FA4200B03EFB /* Italian */,
-				D40271BB083D92C500D09108 /* nl */,
-				D44C05E809A1A67400C388AF /* zh_CN */,
-			);
-			name = MenuMetersPref.nib;
-			sourceTree = "<group>";
-		};
 		D4E4C01F04F3420700A87BC9 /* Installer.nib */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -1526,6 +1659,59 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		3168FAC611A64F7700CEDA37 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = YES;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SDKROOT)$(SYSTEM_LIBRARY_DIR)/PrivateFrameworks\"",
+					"\"$(SRCROOT)\"",
+				);
+				GCC_ENABLE_FIX_AND_CONTINUE = NO;
+				GCC_MODEL_TUNING = G5;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = MenuMeters.pch;
+				INFOPLIST_FILE = /Users/laullon/xcode/MenuMeters/MenuExtras/MenuMeterCalendar/Info.plist;
+				INSTALL_PATH = "";
+				LD_DYLIB_INSTALL_NAME = "";
+				LD_RUNPATH_SEARCH_PATHS = "";
+				OTHER_LDFLAGS = "";
+				PREBINDING = NO;
+				PRODUCT_NAME = MenuMeterCalendar;
+				WRAPPER_EXTENSION = menu;
+			};
+			name = Release;
+		};
+		3168FAC711A64F7700CEDA37 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = YES;
+				COPY_PHASE_STRIP = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SDKROOT)$(SYSTEM_LIBRARY_DIR)/PrivateFrameworks\"",
+					"\"$(SRCROOT)\"",
+				);
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_FIX_AND_CONTINUE = NO;
+				GCC_MODEL_TUNING = G5;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = MenuMeters.pch;
+				INFOPLIST_FILE = /Users/laullon/xcode/MenuMeters/MenuExtras/MenuMeterCalendar/Info.plist;
+				INSTALL_PATH = "";
+				LD_DYLIB_INSTALL_NAME = "";
+				LD_RUNPATH_SEARCH_PATHS = "";
+				OTHER_LDFLAGS = "";
+				PREBINDING = NO;
+				PRODUCT_NAME = MenuMeterCalendar;
+				WRAPPER_EXTENSION = menu;
+			};
+			name = Debug;
+		};
 		D4AFB328087726B20023B640 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -1593,6 +1779,12 @@
 		D4AFB33D087726B20023B640 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/../../Downloads\"",
+					"\"$(SRCROOT)\"",
+					"\"$(SRCROOT)/Amber.framework/Versions/A/Frameworks\"",
+				);
 				INFOPLIST_FILE = Installer/Resources/Info.plist;
 				PRODUCT_NAME = "MenuMeters Installer";
 				WRAPPER_EXTENSION = app;
@@ -1718,6 +1910,12 @@
 		D4CD20450D88E34100481A51 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/../../Downloads\"",
+					"\"$(SRCROOT)\"",
+					"\"$(SRCROOT)/Amber.framework/Versions/A/Frameworks\"",
+				);
 				INFOPLIST_FILE = Installer/Resources/Info.plist;
 				PRODUCT_NAME = "MenuMeters Installer";
 				WRAPPER_EXTENSION = app;
@@ -1791,6 +1989,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		3168FAC811A64F7700CEDA37 /* Build configuration list for PBXNativeTarget "Calendar" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3168FAC611A64F7700CEDA37 /* Release */,
+				3168FAC711A64F7700CEDA37 /* Debug */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		D4AFB327087726B20023B640 /* Build configuration list for PBXNativeTarget "Install Tool" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

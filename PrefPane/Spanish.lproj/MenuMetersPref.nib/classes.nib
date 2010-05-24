@@ -5,6 +5,33 @@
 	<key>IBClasses</key>
 	<array>
 		<dict>
+			<key>CLASS</key>
+			<string>FirstResponder</string>
+			<key>LANGUAGE</key>
+			<string>ObjC</string>
+			<key>SUPERCLASS</key>
+			<string>NSObject</string>
+		</dict>
+		<dict>
+			<key>CLASS</key>
+			<string>NSPreferencePane</string>
+			<key>LANGUAGE</key>
+			<string>ObjC</string>
+			<key>OUTLETS</key>
+			<dict>
+				<key>_firstKeyView</key>
+				<string>id</string>
+				<key>_initialKeyView</key>
+				<string>id</string>
+				<key>_lastKeyView</key>
+				<string>id</string>
+				<key>_window</key>
+				<string>id</string>
+			</dict>
+			<key>SUPERCLASS</key>
+			<string>NSObject</string>
+		</dict>
+		<dict>
 			<key>ACTIONS</key>
 			<dict>
 				<key>cpuPrefChange</key>
@@ -24,8 +51,6 @@
 			<string>ObjC</string>
 			<key>OUTLETS</key>
 			<dict>
-				<key>cpuAntialias</key>
-				<string>NSButton</string>
 				<key>cpuAvgProcs</key>
 				<string>NSButton</string>
 				<key>cpuDisplayMode</key>
@@ -72,8 +97,6 @@
 				<string>NSPopUpButton</string>
 				<key>memActiveColor</key>
 				<string>NSColorWell</string>
-				<key>memAntialias</key>
-				<string>NSButton</string>
 				<key>memColorTab</key>
 				<string>NSTabView</string>
 				<key>memDisplayMode</key>
@@ -161,33 +184,6 @@
 			</dict>
 			<key>SUPERCLASS</key>
 			<string>NSPreferencePane</string>
-		</dict>
-		<dict>
-			<key>CLASS</key>
-			<string>FirstResponder</string>
-			<key>LANGUAGE</key>
-			<string>ObjC</string>
-			<key>SUPERCLASS</key>
-			<string>NSObject</string>
-		</dict>
-		<dict>
-			<key>CLASS</key>
-			<string>NSPreferencePane</string>
-			<key>LANGUAGE</key>
-			<string>ObjC</string>
-			<key>OUTLETS</key>
-			<dict>
-				<key>_firstKeyView</key>
-				<string>id</string>
-				<key>_initialKeyView</key>
-				<string>id</string>
-				<key>_lastKeyView</key>
-				<string>id</string>
-				<key>_window</key>
-				<string>id</string>
-			</dict>
-			<key>SUPERCLASS</key>
-			<string>NSObject</string>
 		</dict>
 	</array>
 	<key>IBVersion</key>

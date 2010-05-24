@@ -62,6 +62,7 @@
 #define kDiskMenuURL				[NSURL fileURLWithPath:[[self bundle] pathForResource:@"MenuMeterDisk" ofType:@"menu" inDirectory:@""]]
 #define kMemMenuURL					[NSURL fileURLWithPath:[[self bundle] pathForResource:@"MenuMeterMem" ofType:@"menu" inDirectory:@""]]
 #define kNetMenuURL					[NSURL fileURLWithPath:[[self bundle] pathForResource:@"MenuMeterNet" ofType:@"menu" inDirectory:@""]]
+#define kCalMenuURL					[NSURL fileURLWithPath:[[self bundle] pathForResource:@"MenuMeterCalendar" ofType:@"menu" inDirectory:@""]]
 
 // How long to wait for Extras to add once CoreMenuExtraAddMenuExtra returns?
 #define kWaitForExtraLoadMicroSec		2000000
@@ -561,6 +562,16 @@ static void scChangeCallback(SCDynamicStoreRef store, CFArrayRef changedKeys, vo
 	}
 
 } // memPrefChange
+
+- (IBAction)calPrefChange:(id)sender{
+	if (([calendarToggle state] == NSOnState) && ![self isExtraWithBundleIDLoaded:kCalMenuBundleID]) {
+		[self loadExtraAtURL:kCalMenuURL withID:kCalMenuBundleID];
+	}
+	else if (([calendarToggle state] == NSOffState) && [self isExtraWithBundleIDLoaded:kCalMenuBundleID]) {
+		[self removeExtraWithBundleID:kCalMenuBundleID];
+	}
+	[calendarToggle setState:([self isExtraWithBundleIDLoaded:kCalMenuBundleID] ? NSOnState : NSOffState)];
+}
 
 - (IBAction)netPrefChange:(id)sender {
 
