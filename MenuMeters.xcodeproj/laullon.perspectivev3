@@ -232,8 +232,6 @@
 			<key>Layout</key>
 			<array>
 				<dict>
-					<key>BecomeActive</key>
-					<true/>
 					<key>ContentConfiguration</key>
 					<dict>
 						<key>PBXBottomSmartGroupGIDs</key>
@@ -329,7 +327,7 @@
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>312E9F6511AA5028008E9665</string>
+										<string>31A8A20911AA583C00D7D3CD</string>
 										<key>history</key>
 										<array>
 											<string>31EAAEB711A733A200032C40</string>
@@ -370,7 +368,7 @@
 											<string>3170AE5311AA04A700248729</string>
 											<string>3170AE5411AA04A700248729</string>
 											<string>3170AE5511AA04A700248729</string>
-											<string>31007EAC11AA1FB70082F3C1</string>
+											<string>312E9F6511AA5028008E9665</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -384,18 +382,18 @@
 							<key>GeometryConfiguration</key>
 							<dict>
 								<key>Frame</key>
-								<string>{{0, 0}, {1108, 566}}</string>
+								<string>{{0, 0}, {1108, 560}}</string>
 								<key>RubberWindowFrame</key>
 								<string>1680 205 1440 845 1680 150 1440 900 </string>
 							</dict>
 							<key>Module</key>
 							<string>PBXNavigatorGroup</string>
 							<key>Proportion</key>
-							<string>566pt</string>
+							<string>560pt</string>
 						</dict>
 						<dict>
 							<key>Proportion</key>
-							<string>233pt</string>
+							<string>239pt</string>
 							<key>Tabs</key>
 							<array>
 								<dict>
@@ -409,9 +407,7 @@
 									<key>GeometryConfiguration</key>
 									<dict>
 										<key>Frame</key>
-										<string>{{10, 27}, {1108, 206}}</string>
-										<key>RubberWindowFrame</key>
-										<string>1680 205 1440 845 1680 150 1440 900 </string>
+										<string>{{10, 27}, {1108, 212}}</string>
 									</dict>
 									<key>Module</key>
 									<string>XCDetailModule</string>
@@ -465,7 +461,9 @@
 									<key>GeometryConfiguration</key>
 									<dict>
 										<key>Frame</key>
-										<string>{{10, 27}, {1108, 200}}</string>
+										<string>{{10, 27}, {1108, 212}}</string>
+										<key>RubberWindowFrame</key>
+										<string>1680 205 1440 845 1680 150 1440 900 </string>
 									</dict>
 									<key>Module</key>
 									<string>PBXBuildResultsModule</string>
@@ -493,11 +491,11 @@
 			</array>
 			<key>TableOfContents</key>
 			<array>
-				<string>312E9F5C11AA4F61008E9665</string>
+				<string>31A8A20A11AA583C00D7D3CD</string>
 				<string>1CA23ED40692098700951B8B</string>
-				<string>312E9F5D11AA4F61008E9665</string>
+				<string>31A8A20B11AA583C00D7D3CD</string>
 				<string>31D6A22311A50BD600A3531B</string>
-				<string>312E9F5E11AA4F61008E9665</string>
+				<string>31A8A20C11AA583C00D7D3CD</string>
 				<string>1CA23EDF0692099D00951B8B</string>
 				<string>1CA23EE00692099D00951B8B</string>
 				<string>1CA23EE10692099D00951B8B</string>
@@ -646,14 +644,14 @@
 			</array>
 			<key>TableOfContents</key>
 			<array>
-				<string>31007EA311AA0B480082F3C1</string>
+				<string>31A8A20D11AA583C00D7D3CD</string>
 				<string>1CCC7628064C1048000F2A68</string>
 				<string>1CCC7629064C1048000F2A68</string>
-				<string>31007EA411AA0B480082F3C1</string>
-				<string>31007EA511AA0B480082F3C1</string>
-				<string>31007EA611AA0B480082F3C1</string>
-				<string>31007EA711AA0B480082F3C1</string>
-				<string>31007EA811AA0B480082F3C1</string>
+				<string>31A8A20E11AA583C00D7D3CD</string>
+				<string>31A8A20F11AA583C00D7D3CD</string>
+				<string>31A8A21011AA583C00D7D3CD</string>
+				<string>31A8A21111AA583C00D7D3CD</string>
+				<string>31A8A21211AA583C00D7D3CD</string>
 			</array>
 			<key>ToolbarConfigUserDefaultsMinorVersion</key>
 			<string>2</string>
@@ -685,6 +683,9 @@
 	<integer>5</integer>
 	<key>WindowOrderList</key>
 	<array>
+		<string>31A8A21311AA583C00D7D3CD</string>
+		<string>31A8A21411AA583C00D7D3CD</string>
+		<string>31A8A21511AA583C00D7D3CD</string>
 		<string>/Users/laullon/xcode/MenuMeters/MenuMeters.xcodeproj</string>
 	</array>
 	<key>WindowString</key>

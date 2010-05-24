@@ -183,7 +183,7 @@
 	[menuItem setEnabled:NO];
 		
 	// Add Top process title and blanks for load display
-	menuItem = (NSMenuItem *)[extraMenu addItemWithTitle:[bundle localizedStringForKey:kTopProcessTitle value:nil table:nil]
+/*	menuItem = (NSMenuItem *)[extraMenu addItemWithTitle:[bundle localizedStringForKey:kTopProcessTitle value:nil table:nil]
 												  action:nil 
 										   keyEquivalent:@""];
 	[menuItem setEnabled:NO];
@@ -192,7 +192,7 @@
 	menuItem = (NSMenuItem *)[extraMenu addItemWithTitle:@"" action:nil keyEquivalent:@""];
 	[menuItem setEnabled:NO];
 	menuItem = (NSMenuItem *)[extraMenu addItemWithTitle:@"" action:nil keyEquivalent:@""];
-	[menuItem setEnabled:NO];
+	[menuItem setEnabled:NO]; */
 	
 	// And the "Open Process Viewer"/"Open Activity Monitor" and "Open Console" item
 	[extraMenu addItem:[NSMenuItem separatorItem]];
@@ -341,7 +341,7 @@ int get_proc_info(pid_t pid);
 	title = [NSString stringWithFormat:kMenuIndentFormat, [cpuInfo loadAverage]];
 	if (title) LiveUpdateMenuItemTitle(extraMenu, kCPULoadInfoMenuIndex, title);
 
-	NSDictionary *info;
+/*	NSDictionary *info;
 	BOOL foundApp = NO;
 	OSErr err=noErr;
 	ProcessSerialNumber psn = {0, kNoProcess};
@@ -391,7 +391,7 @@ int get_proc_info(pid_t pid);
 			break; // either a problem or the end of the list
 		}
 	}
-	
+	*/
 	
 	// Send the menu back to SystemUIServer
 	return extraMenu;
