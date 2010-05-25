@@ -204,7 +204,6 @@
 - (void)saveCpuUserColor:(NSColor *)color {
 	[self saveColorPref:kCPUUserColorPref value:color];
 } // saveCpuUserColor
-
 ///////////////////////////////////////////////////////////////
 //	
 //	Disk menu prefs
@@ -936,6 +935,22 @@
 						  kCFPreferencesCurrentUser, 
 						  kCFPreferencesAnyHost);
 } // _saveColorPref
+
+
+- (void)save:(NSString *)prefName array:(NSArray *)value{
+	CFPreferencesSetValue((CFStringRef)prefName, 
+						  [NSArchiver archivedDataWithRootObject:value], 
+						  (CFStringRef)kMenuMeterDefaultsDomain, 
+						  kCFPreferencesCurrentUser, 
+						  kCFPreferencesAnyHost);
+}
+
+- (NSArray *)loadArray:(NSString *)prefName{
+	NSData *data = (NSData *)CFPreferencesCopyValue((CFStringRef)prefName, 
+												   (CFStringRef)kMenuMeterDefaultsDomain, 
+												   kCFPreferencesCurrentUser, kCFPreferencesAnyHost);	
+	return (NSArray *)[NSUnarchiver unarchiveObjectWithData: data];
+}
 
 - (NSString *)loadStringPref:(NSString *)prefName defaultValue:(NSString *)defaultValue {
 

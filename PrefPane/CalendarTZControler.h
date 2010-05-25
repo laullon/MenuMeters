@@ -7,20 +7,24 @@
 //
 
 #import <Cocoa/Cocoa.h>
-
+#import "MenuMetersPref.h"
 
 @interface CalendarTZControler : NSObject {
 		
 	NSArray *timeZoneNames;
 	NSMutableArray *timeZones;
+	MenuMeterDefaults *ourPrefs;
 	
 	IBOutlet NSTableView *ktzTable;
 	IBOutlet NSTableView *selTable;
+	IBOutlet MenuMetersPref *prefs;
 }
 
 - (void)awakeFromNib;
 - (IBAction)addTZ:(id)sender;
-
+- (IBAction)rmTZ:(id)sender;
+- (NSArray *)selectedTimeZones;
+- (void)save;
 
 @end
 

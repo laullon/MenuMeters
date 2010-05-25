@@ -15,7 +15,6 @@
 		3168FAD011A6506C00CEDA37 /* IOKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D478F451101A8AE100C79173 /* IOKit.framework */; };
 		3168FB3411A6521E00CEDA37 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3168FB3311A6521E00CEDA37 /* Info.plist */; };
 		3168FB4C11A653A000CEDA37 /* MenuMeterCalendarExtra.m in Sources */ = {isa = PBXBuildFile; fileRef = 3168FB4B11A653A000CEDA37 /* MenuMeterCalendarExtra.m */; };
-		316C6B6411ABB5DF00412ADE /* CalendarTZControler.m in Sources */ = {isa = PBXBuildFile; fileRef = 316C6B6311ABB5DF00412ADE /* CalendarTZControler.m */; };
 		316C6B6511ABB5DF00412ADE /* CalendarTZControler.h in Headers */ = {isa = PBXBuildFile; fileRef = 316C6B6211ABB5DF00412ADE /* CalendarTZControler.h */; };
 		316C6B6611ABB5DF00412ADE /* CalendarTZControler.m in Sources */ = {isa = PBXBuildFile; fileRef = 316C6B6311ABB5DF00412ADE /* CalendarTZControler.m */; };
 		31D08ECA11AA073500F55B12 /* MenuMetersPref.xib in Resources */ = {isa = PBXBuildFile; fileRef = 31D08EC811AA073500F55B12 /* MenuMetersPref.xib */; };
@@ -562,10 +561,10 @@
 		3168FAE911A6513600CEDA37 /* MenuMeterCalendar */ = {
 			isa = PBXGroup;
 			children = (
+				3168FAEA11A6514900CEDA37 /* Resource */,
 				3118B5A211A7C92300E8454D /* CalendarControl.h */,
 				3118B5A311A7C92300E8454D /* CalendarControl.m */,
 				31EAAFA111A74C5E00032C40 /* Calendar.xib */,
-				3168FAEA11A6514900CEDA37 /* Resource */,
 				31EAAEAD11A7326200032C40 /* MenuMeterCalendarView.h */,
 				31EAAEAE11A7326200032C40 /* MenuMeterCalendarView.m */,
 				3168FB4A11A653A000CEDA37 /* MenuMeterCalendarExtra.h */,
@@ -1396,7 +1395,6 @@
 				3168FB4C11A653A000CEDA37 /* MenuMeterCalendarExtra.m in Sources */,
 				31EAAEAF11A7326200032C40 /* MenuMeterCalendarView.m in Sources */,
 				3118B5A611A7C92300E8454D /* CalendarControl.m in Sources */,
-				316C6B6411ABB5DF00412ADE /* CalendarTZControler.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

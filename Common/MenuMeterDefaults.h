@@ -115,4 +115,8 @@
 - (void)saveNetInactiveColor:(NSColor *)color;
 - (void)saveNetPreferInterface:(NSString *)interface;
 
+// generics
+- (void)save:(NSString *)prefName array:(NSArray *)value;
+- (NSArray *)loadArray:(NSString *)prefName;
+
 @end

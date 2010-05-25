@@ -22,6 +22,7 @@
 //
 
 #import "MenuMetersPref.h"
+#import "CalendarTZControler.h"
 
 ///////////////////////////////////////////////////////////////
 //
@@ -211,6 +212,7 @@ static void scChangeCallback(SCDynamicStoreRef store, CFArrayRef changedKeys, vo
 	[diskMeterToggle setState:([self isExtraWithBundleIDLoaded:kDiskMenuBundleID] ? NSOnState : NSOffState)];
 	[memMeterToggle setState:([self isExtraWithBundleIDLoaded:kMemMenuBundleID] ? NSOnState : NSOffState)];
 	[netMeterToggle setState:([self isExtraWithBundleIDLoaded:kNetMenuBundleID] ? NSOnState : NSOffState)];
+	[calendarToggle setState:([self isExtraWithBundleIDLoaded:kCalMenuBundleID] ? NSOnState : NSOffState)];
 
 	// Build the preferred interface menu and select (this actually updates the net prefs too)
 	[self updateNetInterfaceMenu];
@@ -571,6 +573,8 @@ static void scChangeCallback(SCDynamicStoreRef store, CFArrayRef changedKeys, vo
 		[self removeExtraWithBundleID:kCalMenuBundleID];
 	}
 	[calendarToggle setState:([self isExtraWithBundleIDLoaded:kCalMenuBundleID] ? NSOnState : NSOffState)];
+	
+	NSLog(@"[calPrefChange]");
 }
 
 - (IBAction)netPrefChange:(id)sender {

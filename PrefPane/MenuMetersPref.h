@@ -35,7 +35,6 @@
 #import "MenuMeterNet.h"
 #import "MenuMeterPowerMate.h"
 
-
 @interface MenuMetersPref : NSPreferencePane {
 
 	// Our preferences
