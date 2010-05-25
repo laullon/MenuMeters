@@ -96,7 +96,7 @@ static void scChangeCallback(SCDynamicStoreRef store, CFArrayRef changedKeys, vo
 ///////////////////////////////////////////////////////////////
 
 - (void)mainViewDidLoad {
-
+	
 	// Check OS version
 	BOOL isLeopardOrLater = NO;
 	SInt32 gestValue = 0;
