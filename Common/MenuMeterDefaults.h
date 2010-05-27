@@ -116,7 +116,7 @@
 - (void)saveNetPreferInterface:(NSString *)interface;
 
 // generics
-- (void)save:(NSString *)prefName array:(NSArray *)value;
-- (NSArray *)loadArray:(NSString *)prefName;
+- (void)save:(NSString *)prefName value:(id)value;
+- (id)load:(NSString *)prefName default:(id)def;
 
 @end

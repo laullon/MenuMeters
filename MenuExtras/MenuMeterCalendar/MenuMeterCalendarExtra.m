@@ -19,11 +19,11 @@
 	
 	NSLog(@"MenuMeterCalendarExtra bundel = %@",bundle);
 	calendarVC = [[NSViewController alloc] initWithNibName:@"Calendar" bundle:bundle];
-		
+	
     theView = [[MenuMeterCalendarView alloc] initWithFrame:
 			   [[self view] frame] menuExtra:self];
     [self setView:theView];
-	    
+	
     // prepare "dummy" menu, without any actions
     theMenu = [[NSMenu alloc] initWithTitle: @""];
     [theMenu setAutoenablesItems: NO];
@@ -36,6 +36,23 @@
 												 selector:@selector(updateDisplay:)
 												 userInfo:nil
 												  repeats:YES];
+	
+	NSString *prefBundlePath = [[[bundle bundlePath] stringByDeletingLastPathComponent]
+								stringByAppendingPathComponent:kPrefBundleName];
+	ourPrefs = [[[[NSBundle bundleWithPath:prefBundlePath] principalClass] alloc] init];
+	if (!ourPrefs) {
+		NSLog(@"MenuMeterCalendarExtra unable to connect to preferences. Abort.");
+		[self release];
+		return nil;
+	}
+	
+	[[NSDistributedNotificationCenter defaultCenter] addObserver:self 
+														selector:@selector(configFromPrefs:) 
+															name:kCalMenuBundleID 
+														  object:kPrefChangeNotification];
+	
+	[self configFromPrefs:nil];
+	
 	NSLog(@"MenuMeterCalendar loaded.");
     return self;
 }
@@ -51,22 +68,17 @@
 	
 	[item setView:[calendarVC view]];	
 	
-	/*CalCalendarStore *calendarStore = [CalCalendarStore defaultCalendarStore];
-	NSPredicate *eventsForThisYear = [CalCalendarStore eventPredicateWithStartDate:[NSDate date] 
-																		   endDate:[self oneWeekLater] 
-																		 calendars:[calendarStore calendars]];
-	NSArray *events=[calendarStore eventsWithPredicate:eventsForThisYear];
-	
-	if ([events count] > 0){
-        for (CalEvent *aCalendarEvent in events){
-			//NSLog(@"%@ - %@",[aCalendarEvent.title capitalizedString],aCalendarEvent);
-			NSMenuItem *item = (NSMenuItem *)[theMenu addItemWithTitle:@"" 
-																action: nil 
-														 keyEquivalent: @""];
-			[item setView:[calendarVC view]];
-			break;
-		}
-	}*/
+	for(NSString *tzName in timeZones){
+		NSTimeZone *tz=[NSTimeZone timeZoneWithName:tzName];
+		NSDateFormatter* theDateFormatter = [[[NSDateFormatter alloc] init] autorelease];	
+		[theDateFormatter setTimeZone:tz];	
+		[theDateFormatter setTimeStyle:NSDateFormatterLongStyle];	
+		
+		NSString *t=[NSString stringWithFormat:@"%@: %@", [tz name], [theDateFormatter stringForObjectValue:[NSDate date]]];
+		[theMenu addItemWithTitle:t
+						   action: nil 
+					keyEquivalent: @""];	
+	}	
 	
 	return theMenu;
 }
@@ -90,6 +102,16 @@
 
 - (void)updateDisplay:(NSTimer *)timer {
 	[theView setNeedsDisplay:YES];
+}
+
+- (void)configFromPrefs:(NSNotification *)notification{
+	[ourPrefs syncWithDisk];	
+	timeZones=[ourPrefs load:@"calendarSelectedTimeZones" default:nil];
+	NSNumber *ts=[ourPrefs load:@"calendarTimeFormat" default:[NSNumber numberWithInteger:NSDateFormatterShortStyle]];
+	//NSNumber *td=[ourPrefs load:@"calendarDateFormat" default:[NSNumber numberWithInteger:NSDateFormatterShortStyle]];
+	
+	[theView setTimeStyle:[ts integerValue]];
+	[theView setNeedsDisplay:YES];	
 }
 
 @end

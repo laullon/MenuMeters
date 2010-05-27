@@ -937,7 +937,7 @@
 } // _saveColorPref
 
 
-- (void)save:(NSString *)prefName array:(NSArray *)value{
+- (void)save:(NSString *)prefName value:(id)value{
 	CFPreferencesSetValue((CFStringRef)prefName, 
 						  [NSArchiver archivedDataWithRootObject:value], 
 						  (CFStringRef)kMenuMeterDefaultsDomain, 
@@ -945,11 +945,12 @@
 						  kCFPreferencesAnyHost);
 }
 
-- (NSArray *)loadArray:(NSString *)prefName{
+- (id)load:(NSString *)prefName default:(id)def{
 	NSData *data = (NSData *)CFPreferencesCopyValue((CFStringRef)prefName, 
 												   (CFStringRef)kMenuMeterDefaultsDomain, 
 												   kCFPreferencesCurrentUser, kCFPreferencesAnyHost);	
-	return (NSArray *)[NSUnarchiver unarchiveObjectWithData: data];
+	if(data==nil) return def;
+	return [[NSUnarchiver unarchiveObjectWithData: data] retain];
 }
 
 - (NSString *)loadStringPref:(NSString *)prefName defaultValue:(NSString *)defaultValue {

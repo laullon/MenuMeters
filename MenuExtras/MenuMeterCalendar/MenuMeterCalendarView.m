@@ -8,6 +8,9 @@
 
 #import "MenuMeterCalendarView.h"
 
+@interface MenuMeterCalendarView (PrivateMethods)
+-(NSString *)now;
+@end
 
 @implementation MenuMeterCalendarView
 
@@ -17,53 +20,42 @@
 		return nil;
 	}
 	
-	[self setFrameSize:NSMakeSize(45, [self frame].size.height)];
-	[self setNeedsDisplay:YES];
+	[self setFrameSize:NSMakeSize(50, [self frame].size.height)];
 	menuExtra=extra;
 	
-    return self;
+	timeAttr=[[NSDictionary dictionaryWithObjectsAndKeys:
+			   [NSFont systemFontOfSize:14],
+			   NSFontAttributeName,
+			   nil] retain];
+	return self;
 	
 } // initWithFrame
 
 
 - (void)drawRect:(NSRect)rect
 {
-	NSDateFormatter* theDateFormatter = [[[NSDateFormatter alloc] init] autorelease];	
-	[theDateFormatter setFormatterBehavior:NSDateFormatterBehavior10_4];
-	[theDateFormatter setTimeStyle:NSDateFormatterShortStyle];	
-	NSString *timeString=[theDateFormatter stringForObjectValue:[NSDate date]];
-	
-/*	theDateFormatter = [[[NSDateFormatter alloc] init] autorelease];
-	[theDateFormatter setFormatterBehavior:NSDateFormatterBehavior10_4];
-	[theDateFormatter setDateStyle:NSDateFormatterMediumStyle];
-	NSString *dateString=[theDateFormatter stringForObjectValue:[NSDate date]]; */
-	
-	
-	
-	NSImage *image = [[[NSImage alloc] initWithSize:NSMakeSize((float)45,
-															   [self frame].size.height - 1)] autorelease];
-	
-/*	NSAttributedString *date = [[[NSAttributedString alloc]
-								 initWithString:dateString
-								 attributes:[NSDictionary dictionaryWithObjectsAndKeys:
-											 [NSFont systemFontOfSize:9.5f],
-											 NSFontAttributeName,
-											 nil]] autorelease]; */
-	
-	NSAttributedString *time = [[[NSAttributedString alloc]
-								 initWithString:timeString
-								 attributes:[NSDictionary dictionaryWithObjectsAndKeys:
-											 [NSFont systemFontOfSize:14],
-											 NSFontAttributeName,
-											 nil]] autorelease];
+	NSAttributedString *time = [[NSAttributedString alloc] initWithString:[self now] attributes:timeAttr];
+	NSImage *image = [[[NSImage alloc] initWithSize:NSMakeSize([time size].width, [self frame].size.height - 1)] autorelease];
 	if ([menuExtra isMenuDown]) {
 		[menuExtra drawMenuBackground:YES];
 	}
 	[image lockFocus];
-	//[date drawAtPoint:NSMakePoint((float)0, (float)floor([image size].height / 2) - 1)];
 	[time drawAtPoint:NSMakePoint((float)0, (float)floor(2))];
 	[image unlockFocus];
 	[image compositeToPoint:NSMakePoint(0, 1) operation:NSCompositeSourceOver];
 }
 
+-(void)setTimeStyle:(NSDateFormatterStyle)ts{
+	timeStyle=ts;
+	NSAttributedString *n = [[NSAttributedString alloc] initWithString:[self now] attributes:timeAttr];
+	[self setFrameSize:NSMakeSize([n size].width, [self frame].size.height)];
+	[self setNeedsDisplay:YES];
+}
+
+-(NSString *)now{
+	NSDateFormatter* theDateFormatter = [[[NSDateFormatter alloc] init] autorelease];	
+	[theDateFormatter setFormatterBehavior:NSDateFormatterBehavior10_4];
+	[theDateFormatter setTimeStyle:timeStyle];	
+	return [[theDateFormatter stringForObjectValue:[NSDate date]] autorelease];
+}
 @end

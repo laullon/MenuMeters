@@ -8,9 +8,14 @@
 
 #import <Cocoa/Cocoa.h>
 #import "AppleUndocumented.h"
+#import "MenuMetersPref.h"
 
 @interface MenuMeterCalendarView : NSMenuExtraView {
 	NSMenuExtra 	*menuExtra;
+	NSDateFormatterStyle timeStyle;
+	NSDictionary *timeAttr;
 }
+
+-(void)setTimeStyle:(NSDateFormatterStyle)ts;
 
 @end

@@ -117,6 +117,7 @@
 - (void)mainViewDidLoad;
 - (void)willSelect;
 - (void)didUnselect;
+- (BOOL)isExtraWithBundleIDLoaded:(NSString *)bundleID;
 
 // IB Targets
 - (IBAction)liveUpdateInterval:(id)sender;

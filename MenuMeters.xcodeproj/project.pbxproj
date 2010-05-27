@@ -15,8 +15,8 @@
 		3168FAD011A6506C00CEDA37 /* IOKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D478F451101A8AE100C79173 /* IOKit.framework */; };
 		3168FB3411A6521E00CEDA37 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3168FB3311A6521E00CEDA37 /* Info.plist */; };
 		3168FB4C11A653A000CEDA37 /* MenuMeterCalendarExtra.m in Sources */ = {isa = PBXBuildFile; fileRef = 3168FB4B11A653A000CEDA37 /* MenuMeterCalendarExtra.m */; };
-		316C6B6511ABB5DF00412ADE /* CalendarTZControler.h in Headers */ = {isa = PBXBuildFile; fileRef = 316C6B6211ABB5DF00412ADE /* CalendarTZControler.h */; };
-		316C6B6611ABB5DF00412ADE /* CalendarTZControler.m in Sources */ = {isa = PBXBuildFile; fileRef = 316C6B6311ABB5DF00412ADE /* CalendarTZControler.m */; };
+		316C6B6511ABB5DF00412ADE /* CalendarPrefControler.h in Headers */ = {isa = PBXBuildFile; fileRef = 316C6B6211ABB5DF00412ADE /* CalendarPrefControler.h */; };
+		316C6B6611ABB5DF00412ADE /* CalendarPrefControler.m in Sources */ = {isa = PBXBuildFile; fileRef = 316C6B6311ABB5DF00412ADE /* CalendarPrefControler.m */; };
 		31D08ECA11AA073500F55B12 /* MenuMetersPref.xib in Resources */ = {isa = PBXBuildFile; fileRef = 31D08EC811AA073500F55B12 /* MenuMetersPref.xib */; };
 		31D08ECB11AA073500F55B12 /* MenuMetersPref.xib in Resources */ = {isa = PBXBuildFile; fileRef = 31D08EC811AA073500F55B12 /* MenuMetersPref.xib */; };
 		31EAAEAF11A7326200032C40 /* MenuMeterCalendarView.m in Sources */ = {isa = PBXBuildFile; fileRef = 31EAAEAE11A7326200032C40 /* MenuMeterCalendarView.m */; };
@@ -285,8 +285,8 @@
 		3168FB3311A6521E00CEDA37 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3168FB4A11A653A000CEDA37 /* MenuMeterCalendarExtra.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MenuMeterCalendarExtra.h; path = MenuExtras/MenuMeterCalendar/MenuMeterCalendarExtra.h; sourceTree = "<group>"; };
 		3168FB4B11A653A000CEDA37 /* MenuMeterCalendarExtra.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MenuMeterCalendarExtra.m; path = MenuExtras/MenuMeterCalendar/MenuMeterCalendarExtra.m; sourceTree = "<group>"; };
-		316C6B6211ABB5DF00412ADE /* CalendarTZControler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CalendarTZControler.h; sourceTree = "<group>"; };
-		316C6B6311ABB5DF00412ADE /* CalendarTZControler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CalendarTZControler.m; sourceTree = "<group>"; };
+		316C6B6211ABB5DF00412ADE /* CalendarPrefControler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CalendarPrefControler.h; sourceTree = "<group>"; };
+		316C6B6311ABB5DF00412ADE /* CalendarPrefControler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CalendarPrefControler.m; sourceTree = "<group>"; };
 		31D08EC911AA073500F55B12 /* English */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = English; path = English.lproj/MenuMetersPref.xib; sourceTree = "<group>"; };
 		31EAAEAD11A7326200032C40 /* MenuMeterCalendarView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MenuMeterCalendarView.h; path = MenuExtras/MenuMeterCalendar/MenuMeterCalendarView.h; sourceTree = "<group>"; };
 		31EAAEAE11A7326200032C40 /* MenuMeterCalendarView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MenuMeterCalendarView.m; path = MenuExtras/MenuMeterCalendar/MenuMeterCalendarView.m; sourceTree = "<group>"; };
@@ -818,8 +818,8 @@
 				D4E4BFA004F333B100A87BC9 /* MenuMetersPref.h */,
 				D4E4BFA104F333B100A87BC9 /* MenuMetersPref.m */,
 				D4E4BFB904F333D000A87BC9 /* Resources */,
-				316C6B6211ABB5DF00412ADE /* CalendarTZControler.h */,
-				316C6B6311ABB5DF00412ADE /* CalendarTZControler.m */,
+				316C6B6211ABB5DF00412ADE /* CalendarPrefControler.h */,
+				316C6B6311ABB5DF00412ADE /* CalendarPrefControler.m */,
 			);
 			path = PrefPane;
 			sourceTree = "<group>";
@@ -969,7 +969,7 @@
 				D4ECB39D05FE72E100954E26 /* MenuMeters.h in Headers */,
 				D4ECB39E05FE72E100954E26 /* MenuMetersPref.h in Headers */,
 				D45CFE7B092451D80015131F /* MenuMeters.pch in Headers */,
-				316C6B6511ABB5DF00412ADE /* CalendarTZControler.h in Headers */,
+				316C6B6511ABB5DF00412ADE /* CalendarPrefControler.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1461,7 +1461,7 @@
 				D4ECB3AA05FE72E100954E26 /* MenuMeterDefaults.m in Sources */,
 				D4ECB3AB05FE72E100954E26 /* MenuMeterPowerMate.m in Sources */,
 				D4ECB3AC05FE72E100954E26 /* MenuMetersPref.m in Sources */,
-				316C6B6611ABB5DF00412ADE /* CalendarTZControler.m in Sources */,
+				316C6B6611ABB5DF00412ADE /* CalendarPrefControler.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

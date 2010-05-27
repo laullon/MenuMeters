@@ -22,7 +22,7 @@
 //
 
 #import "MenuMetersPref.h"
-#import "CalendarTZControler.h"
+#import "CalendarPrefControler.h"
 
 ///////////////////////////////////////////////////////////////
 //
@@ -38,7 +38,6 @@
 
 // Menu extra manipulations
 - (void)loadExtraAtURL:(NSURL *)extraURL withID:(NSString *)bundleID;
-- (BOOL)isExtraWithBundleIDLoaded:(NSString *)bundleID;
 - (void)removeExtraWithBundleID:(NSString *)bundleID;
 - (void)showMenuExtraErrorSheet;
 
