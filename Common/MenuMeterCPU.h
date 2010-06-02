@@ -36,7 +36,7 @@
 #define kCPUUptimeInfoMenuIndex				3
 #define kCPUTaskInfoMenuIndex				5
 #define kCPULoadInfoMenuIndex				7
-#define kTopProcessMenuIndex				9
+#define kTopProcessMenuIndex				10
 
 ///////////////////////////////////////////////////////////////
 //	

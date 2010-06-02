@@ -17,6 +17,8 @@
 		3168FB4C11A653A000CEDA37 /* MenuMeterCalendarExtra.m in Sources */ = {isa = PBXBuildFile; fileRef = 3168FB4B11A653A000CEDA37 /* MenuMeterCalendarExtra.m */; };
 		316C6B6511ABB5DF00412ADE /* CalendarPrefControler.h in Headers */ = {isa = PBXBuildFile; fileRef = 316C6B6211ABB5DF00412ADE /* CalendarPrefControler.h */; };
 		316C6B6611ABB5DF00412ADE /* CalendarPrefControler.m in Sources */ = {isa = PBXBuildFile; fileRef = 316C6B6311ABB5DF00412ADE /* CalendarPrefControler.m */; };
+		31B6739911AF24EE00C66EF7 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D403AE140E04F27000348443 /* Security.framework */; };
+		31B6751111AF579D00C66EF7 /* MMCPUProcess.m in Sources */ = {isa = PBXBuildFile; fileRef = 31B6751011AF579D00C66EF7 /* MMCPUProcess.m */; };
 		31D08ECA11AA073500F55B12 /* MenuMetersPref.xib in Resources */ = {isa = PBXBuildFile; fileRef = 31D08EC811AA073500F55B12 /* MenuMetersPref.xib */; };
 		31D08ECB11AA073500F55B12 /* MenuMetersPref.xib in Resources */ = {isa = PBXBuildFile; fileRef = 31D08EC811AA073500F55B12 /* MenuMetersPref.xib */; };
 		31EAAEAF11A7326200032C40 /* MenuMeterCalendarView.m in Sources */ = {isa = PBXBuildFile; fileRef = 31EAAEAE11A7326200032C40 /* MenuMeterCalendarView.m */; };
@@ -287,6 +289,8 @@
 		3168FB4B11A653A000CEDA37 /* MenuMeterCalendarExtra.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MenuMeterCalendarExtra.m; path = MenuExtras/MenuMeterCalendar/MenuMeterCalendarExtra.m; sourceTree = "<group>"; };
 		316C6B6211ABB5DF00412ADE /* CalendarPrefControler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CalendarPrefControler.h; sourceTree = "<group>"; };
 		316C6B6311ABB5DF00412ADE /* CalendarPrefControler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CalendarPrefControler.m; sourceTree = "<group>"; };
+		31B6750F11AF579D00C66EF7 /* MMCPUProcess.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MMCPUProcess.h; path = MenuExtras/MenuMeterCPU/MMCPUProcess.h; sourceTree = "<group>"; };
+		31B6751011AF579D00C66EF7 /* MMCPUProcess.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MMCPUProcess.m; path = MenuExtras/MenuMeterCPU/MMCPUProcess.m; sourceTree = "<group>"; };
 		31D08EC911AA073500F55B12 /* English */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = English; path = English.lproj/MenuMetersPref.xib; sourceTree = "<group>"; };
 		31EAAEAD11A7326200032C40 /* MenuMeterCalendarView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MenuMeterCalendarView.h; path = MenuExtras/MenuMeterCalendar/MenuMeterCalendarView.h; sourceTree = "<group>"; };
 		31EAAEAE11A7326200032C40 /* MenuMeterCalendarView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MenuMeterCalendarView.m; path = MenuExtras/MenuMeterCalendar/MenuMeterCalendarView.m; sourceTree = "<group>"; };
@@ -520,6 +524,7 @@
 				D403ADE50E04F18500348443 /* Cocoa.framework in Frameworks */,
 				D403ADEE0E04F1B000348443 /* Carbon.framework in Frameworks */,
 				D478F452101A8AE100C79173 /* IOKit.framework in Frameworks */,
+				31B6739911AF24EE00C66EF7 /* Security.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -780,6 +785,7 @@
 		D477AAD603D4B9DE00A87BC9 /* MenuMeterCPU */ = {
 			isa = PBXGroup;
 			children = (
+				D477AAF803D4BE9700A87BC9 /* Resources */,
 				D477AAE803D4BB7D00A87BC9 /* MenuMeterCPUView.h */,
 				D477AAE903D4BB7D00A87BC9 /* MenuMeterCPUView.m */,
 				D477AAED03D4BB8600A87BC9 /* MenuMeterCPUExtra.h */,
@@ -788,7 +794,8 @@
 				D477AAF103D4BB9200A87BC9 /* MenuMeterCPUStats.m */,
 				D477AAF403D4BB9D00A87BC9 /* MenuMeterUptime.h */,
 				D477AAF503D4BB9D00A87BC9 /* MenuMeterUptime.m */,
-				D477AAF803D4BE9700A87BC9 /* Resources */,
+				31B6750F11AF579D00C66EF7 /* MMCPUProcess.h */,
+				31B6751011AF579D00C66EF7 /* MMCPUProcess.m */,
 			);
 			name = MenuMeterCPU;
 			sourceTree = "<group>";
@@ -1451,6 +1458,7 @@
 				D4ECB38405FE718D00954E26 /* MenuMeterUptime.m in Sources */,
 				D4ECB38505FE718D00954E26 /* MenuMeterPowerMate.m in Sources */,
 				D48A79F51018B051008E3207 /* MenuMeterWorkarounds.m in Sources */,
+				31B6751111AF579D00C66EF7 /* MMCPUProcess.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
