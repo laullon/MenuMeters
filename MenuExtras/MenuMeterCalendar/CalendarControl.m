@@ -21,30 +21,11 @@
 #import "CalendarControl.h"
 
 #define WEEK_OFFSET_V		18
-#define DAY_WIDTH			17
-#define DAY_HEIGHT			14
-#define OFFSET_H			4
-#define OFFSET_V			2
+int DAY_WIDTH;
+int DAY_HEIGHT;
+#define OFFSET_H			0
+#define OFFSET_V			0
 
-int numberofDayInMonthForYear(int aMonth,int aYear)
-{
-    if (aMonth>=0 && aMonth<12)
-    {
-        static int sNumberOfDay[12]={31,28,31,30,31,30,31,31,30,31,30,31};
-        
-        if (aMonth==1)
-        {
-            if (((aYear%4)==0) && ((aYear%100)!=0 || (aYear%400)==0))
-            {
-                return 29;
-            }
-        }
-        
-        return sNumberOfDay[aMonth];
-    }
-    
-    return 0;
-}
 
 @implementation CalendarControl
 
@@ -54,18 +35,13 @@ int numberofDayInMonthForYear(int aMonth,int aYear)
     
     if (self)
     {
-        firstDayOfWeek=[NSLocalizedStringFromTable(@"FirstDay",@"WBCalendar",@"No comment") intValue];
+        firstDayOfWeek=[[NSCalendar currentCalendar] firstWeekday];
         
         [self setDate:[NSDate date]];
         
         dayOfWeekAttributes=[[NSDictionary alloc] initWithObjectsAndKeys:[NSFont labelFontOfSize:15],NSFontAttributeName,
 							 nil];
         
-        normalAttributes=[[NSDictionary alloc] initWithObjectsAndKeys:[NSFont labelFontOfSize:10],NSFontAttributeName,
-						  nil];
-        otherMonthAttributes=[[NSDictionary alloc] initWithObjectsAndKeys:[NSFont labelFontOfSize:10],NSFontAttributeName,
-							  [NSColor grayColor],NSForegroundColorAttributeName,
-							  nil];
 	}
     
     return self;
@@ -102,7 +78,7 @@ int numberofDayInMonthForYear(int aMonth,int aYear)
 		[theDateFormatter setFormatterBehavior:NSDateFormatterBehavior10_4];
 		[theDateFormatter setDateFormat:@"MMMM yyyy"];		
 		[month setStringValue:[theDateFormatter stringFromDate:aDate]];
-
+		
 		[theDateFormatter setFormatterBehavior:NSDateFormatterBehavior10_4];
 		[theDateFormatter setDateStyle:NSDateFormatterLongStyle];
 		NSAttributedString *title=[NSAttributedString alloc];
@@ -120,38 +96,40 @@ int numberofDayInMonthForYear(int aMonth,int aYear)
     NSString * tString;
     NSSize tSize;
     NSRect tRect;
-	NSCalendarDate *day=[[aDay dateWithCalendarFormat:nil timeZone:nil] retain];
+    NSCalendar* calendar = [NSCalendar currentCalendar];
+    unsigned unitFlags = NSYearCalendarUnit | NSMonthCalendarUnit |  NSDayCalendarUnit | NSWeekdayCalendarUnit;
+    NSDateComponents* day = [calendar components:unitFlags fromDate:aDay];
 	
-    tString=[NSString stringWithFormat:@"%d",[day dayOfMonth]];
+    tString=[NSString stringWithFormat:@"%d",[day day]];
 	
     tRect=NSMakeRect(OFFSET_H+DAY_WIDTH*col,NSHeight(tBounds)-WEEK_OFFSET_V-(row+1)*DAY_HEIGHT-OFFSET_V,DAY_WIDTH,DAY_HEIGHT);
     
-	//XXX arreglar esto
-	NSDate *today=[NSDate date];
-	//NSLog(@" %@ == %@ > %@",today,day,[today isEqualToDate:day]);
-    if ([today isEqualToDate:day])
-    {
-        NSRect tHiliteRect;
-        
-        // Draw the highlight background
-        
-        tHiliteRect=tRect;
-        tHiliteRect.origin.x+=1.0,
-        tHiliteRect.size.height-=1.0;
-        
-        [[NSColor colorWithDeviceRed:0.7686
-                               green:0.8784
-                                blue:0.9843
-							   alpha:1.0] set];
-        
+	NSRect tHiliteRect;
+	
+	// Draw the highlight background
+	
+	tHiliteRect=tRect;
+	//tHiliteRect.origin.x+=1.0,
+	//tHiliteRect.size.width-=1.0;
+	
+	if (([day weekday]==7) || ([day weekday]==1)){
+		[[NSColor colorWithDeviceRed:0.7686 green:0.8784 blue:0.9843 alpha:1.0] set];
         NSRectFill(tHiliteRect);
+	}
+	
+	NSDate *today=[NSDate date];
+    if ([self isSameDay:today to:aDay])
+    {
+		[[NSColor redColor] set];
+		[NSBezierPath strokeRect:tHiliteRect];
     }
+	
     
     tSize=[tString sizeWithAttributes:normalAttributes];
     
 	NSDictionary *attr;
 	
-	if ([currentDate monthOfYear]==[day monthOfYear]){
+	if ([currentDate monthOfYear]==[day month]){
 		attr=normalAttributes;
 	}else {
 		attr=otherMonthAttributes;
@@ -165,24 +143,25 @@ int numberofDayInMonthForYear(int aMonth,int aYear)
 
 - (void)drawRect:(NSRect) aRect
 {
-    int i=0;
-    NSString * dayArray[7]={@"S", @"M", @"T", @"W", @"T", @"F", @"S"};
+	NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    NSArray * dayArray=[dateFormatter veryShortWeekdaySymbols];
     NSString * tString;
     NSSize tSize;
     NSRect tRect;
     NSRect tBounds=[self bounds];
-    
-    // Draw the background
-    
+	
     tRect.origin=NSZeroPoint;
-    
-    // Draw the week header
-    
-    for(i=0;i<7;i++)
+    DAY_WIDTH=(tBounds.size.width/7);
+    DAY_HEIGHT=((tBounds.size.height-WEEK_OFFSET_V)/7);
+	
+	normalAttributes=[[[NSDictionary alloc] initWithObjectsAndKeys:[NSFont labelFontOfSize:(DAY_HEIGHT-4)],NSFontAttributeName,nil] autorelease];
+	otherMonthAttributes=[[[NSDictionary alloc] initWithObjectsAndKeys:[NSFont labelFontOfSize:(DAY_HEIGHT-4)],NSFontAttributeName, [NSColor grayColor],NSForegroundColorAttributeName,nil] autorelease];
+
+    for(int i=0;i<7;i++)
     {
         tRect=NSMakeRect(OFFSET_H+i*DAY_WIDTH,NSHeight(tBounds)-WEEK_OFFSET_V-OFFSET_V,DAY_WIDTH,WEEK_OFFSET_V);
         
-        tString=dayArray[(firstDayOfWeek+i)%7];
+        tString=[dayArray objectAtIndex:((firstDayOfWeek+i-1)%7)];
         
         tSize=[tString sizeWithAttributes:dayOfWeekAttributes];
 		
@@ -191,14 +170,15 @@ int numberofDayInMonthForYear(int aMonth,int aYear)
     }
     
     // Draw the days
-	NSTimeInterval oneDay=(24*60*60);
     NSDate *day=[self getFirstDayOfCalendar];
+	NSDateComponents *components = [[[NSDateComponents alloc] init] autorelease];
+	components.day = 1;
 	for(int r=0;r<7;r++)
     {
 		for(int c=0;c<7;c++)
 		{
             [self drawday:day col:c row:r];
-			day=[day addTimeInterval:oneDay];
+			day=[[NSCalendar currentCalendar] dateByAddingComponents:components toDate:day options:0];
 		}
     }
 }
@@ -223,6 +203,18 @@ int numberofDayInMonthForYear(int aMonth,int aYear)
 	//NSLog(@"[getFirstDayOfCalendar] %@",beginningOfMonth);
 	//NSLog(@"[getFirstDayOfCalendar] %@",beginningOfWeek);
 	return [beginningOfWeek retain];
+}
+
+- (BOOL)isSameDay:(NSDate*)date1 to:(NSDate*)date2 {
+    NSCalendar* calendar = [NSCalendar currentCalendar];
+	
+    unsigned unitFlags = NSYearCalendarUnit | NSMonthCalendarUnit |  NSDayCalendarUnit;
+    NSDateComponents* comp1 = [calendar components:unitFlags fromDate:date1];
+    NSDateComponents* comp2 = [calendar components:unitFlags fromDate:date2];
+	
+    return [comp1 day]   == [comp2 day] &&
+	[comp1 month] == [comp2 month] &&
+	[comp1 year]  == [comp2 year];
 }
 
 - (IBAction) prevMonth: sender{

@@ -44,6 +44,7 @@
 - (void)setTarget:(id) aTarget;
 
 - (NSDate *)getFirstDayOfCalendar;
+- (BOOL)isSameDay:(NSDate*)date1 to:(NSDate*)date2;
 
 - (IBAction) prevMonth: sender;
 - (IBAction) nextMonth: sender;
