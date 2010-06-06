@@ -152,7 +152,7 @@ int DAY_HEIGHT;
 	
     tRect.origin=NSZeroPoint;
     DAY_WIDTH=(tBounds.size.width/7);
-    DAY_HEIGHT=((tBounds.size.height-WEEK_OFFSET_V)/7);
+    DAY_HEIGHT=((tBounds.size.height-WEEK_OFFSET_V)/6);
 	
 	normalAttributes=[[[NSDictionary alloc] initWithObjectsAndKeys:[NSFont labelFontOfSize:(DAY_HEIGHT-4)],NSFontAttributeName,nil] autorelease];
 	otherMonthAttributes=[[[NSDictionary alloc] initWithObjectsAndKeys:[NSFont labelFontOfSize:(DAY_HEIGHT-4)],NSFontAttributeName, [NSColor grayColor],NSForegroundColorAttributeName,nil] autorelease];
@@ -173,7 +173,7 @@ int DAY_HEIGHT;
     NSDate *day=[self getFirstDayOfCalendar];
 	NSDateComponents *components = [[[NSDateComponents alloc] init] autorelease];
 	components.day = 1;
-	for(int r=0;r<7;r++)
+	for(int r=0;r<6;r++)
     {
 		for(int c=0;c<7;c++)
 		{
