@@ -13,9 +13,12 @@
 @interface MenuMeterCalendarView : NSMenuExtraView {
 	NSMenuExtra 	*menuExtra;
 	NSDateFormatterStyle timeStyle;
+	NSDateFormatterStyle dateStyle;
 	NSDictionary *timeAttr;
 }
 
 -(void)setTimeStyle:(NSDateFormatterStyle)ts;
+
+-(void)setDateStyle:(NSDateFormatterStyle)ds;
 
 @end

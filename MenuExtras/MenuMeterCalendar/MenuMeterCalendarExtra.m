@@ -108,9 +108,10 @@
 	[ourPrefs syncWithDisk];	
 	timeZones=[ourPrefs load:@"calendarSelectedTimeZones" default:nil];
 	NSNumber *ts=[ourPrefs load:@"calendarTimeFormat" default:[NSNumber numberWithInteger:NSDateFormatterShortStyle]];
-	//NSNumber *td=[ourPrefs load:@"calendarDateFormat" default:[NSNumber numberWithInteger:NSDateFormatterShortStyle]];
+	NSNumber *ds=[ourPrefs load:@"calendarDateFormat" default:[NSNumber numberWithInteger:NSDateFormatterShortStyle]];
 	
 	[theView setTimeStyle:[ts integerValue]];
+	[theView setDateStyle:[ds integerValue]];
 	[theView setNeedsDisplay:YES];	
 }
 

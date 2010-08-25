@@ -52,10 +52,18 @@
 	[self setNeedsDisplay:YES];
 }
 
+-(void)setDateStyle:(NSDateFormatterStyle)ds{
+	dateStyle=ds;
+	NSAttributedString *n = [[NSAttributedString alloc] initWithString:[self now] attributes:timeAttr];
+	[self setFrameSize:NSMakeSize([n size].width, [self frame].size.height)];
+	[self setNeedsDisplay:YES];
+}
+
 -(NSString *)now{
 	NSDateFormatter* theDateFormatter = [[[NSDateFormatter alloc] init] autorelease];	
 	[theDateFormatter setFormatterBehavior:NSDateFormatterBehavior10_4];
-	[theDateFormatter setTimeStyle:timeStyle];	
+	[theDateFormatter setTimeStyle:timeStyle];
+	[theDateFormatter setDateStyle:dateStyle];
 	return [[theDateFormatter stringForObjectValue:[NSDate date]] autorelease];
 }
 @end
