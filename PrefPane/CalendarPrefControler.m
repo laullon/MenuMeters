@@ -44,6 +44,11 @@
 	menuItem = [menuTime addItemWithTitle:timeString action:nil keyEquivalent:@""];
 	[menuItem setTag:NSDateFormatterFullStyle];
 	
+	[theDateFormatter setTimeStyle:NSDateFormatterNoStyle];
+	timeString=[theDateFormatter stringForObjectValue:[NSDate date]];
+	menuItem = [menuTime addItemWithTitle:timeString action:nil keyEquivalent:@""];
+	[menuItem setTag:NSDateFormatterNoStyle];
+
 	[timePopUp setMenu:menuTime];
 	
 	theDateFormatter = [[[NSDateFormatter alloc] init] autorelease];	
@@ -69,6 +74,11 @@
 	menuItem = [menuDate addItemWithTitle:timeString action:nil keyEquivalent:@""];
 	[menuItem setTag:NSDateFormatterFullStyle];
 	
+	[theDateFormatter setDateStyle:NSDateFormatterNoStyle];
+	timeString=[theDateFormatter stringForObjectValue:[NSDate date]];
+	menuItem = [menuDate addItemWithTitle:timeString action:nil keyEquivalent:@""];
+	[menuItem setTag:NSDateFormatterNoStyle];
+
 	[datePopUp setMenu:menuDate];
 	
 	ourPrefs = [[MenuMeterDefaults alloc] init];
