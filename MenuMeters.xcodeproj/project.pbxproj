@@ -1690,7 +1690,7 @@
 				GCC_MODEL_TUNING = G5;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = MenuMeters.pch;
-				INFOPLIST_FILE = /Users/laullon/xcode/MenuMeters/MenuExtras/MenuMeterCalendar/Info.plist;
+				INFOPLIST_FILE = MenuExtras/MenuMeterCalendar/Info.plist;
 				INSTALL_PATH = "";
 				LD_DYLIB_INSTALL_NAME = "";
 				LD_RUNPATH_SEARCH_PATHS = "";
@@ -1717,7 +1717,7 @@
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = MenuMeters.pch;
-				INFOPLIST_FILE = /Users/laullon/xcode/MenuMeters/MenuExtras/MenuMeterCalendar/Info.plist;
+				INFOPLIST_FILE = MenuExtras/MenuMeterCalendar/Info.plist;
 				INSTALL_PATH = "";
 				LD_DYLIB_INSTALL_NAME = "";
 				LD_RUNPATH_SEARCH_PATHS = "";
