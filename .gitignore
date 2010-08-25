@@ -1,7 +1,19 @@
-build/*
-*.mode1v3
 
-# osx noise
+
+# xcode/mac files
+*~.nib/
+*.perspective
+*.perspectivev3
+*.pbxuser
+*.mode1v3
 .DS_Store
 profile
+._*
+
+# backup files
+*~
+*.bak
+
+# Build/Output Files Directories
+build/
 
