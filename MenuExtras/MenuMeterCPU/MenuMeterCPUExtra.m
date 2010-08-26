@@ -244,16 +244,21 @@
 												
     // And hand ourself back to SystemUIServer
 	NSLog(@"MenuMeterCPU loaded.");
-	[self displayAlert];
+	[self displayAlert:@"CPU" description:@"fdsgakfh djshaf jdhsalkfhdsla"];
     return self;
 
 } // initWithBundle
 
-- (void)displayAlert {
-	NSString *scriptPath = [[self bundle] pathForResource: @"alert" ofType: @"scpt"];
+- (void)displayAlert:(NSString *)type description:(NSString *)description {
+	NSString *scriptPath = [[self bundle] pathForResource: @"alert" ofType: @"applescript"];
 	NSLog(@"---> scriptPath=%@",scriptPath);
-	NSAppleScript *theScript = [[NSAppleScript alloc] initWithContentsOfURL: [NSURL fileURLWithPath: scriptPath] error: nil];
-	[theScript executeAndReturnError:nil];
+	NSString *source=[NSString stringWithContentsOfURL:[NSURL fileURLWithPath: scriptPath]];
+	source=[source stringByReplacingOccurrencesOfString:@"%TYPE%" withString:type];
+	source=[source stringByReplacingOccurrencesOfString:@"%DESCRIPTION%" withString:description];
+	NSAppleScript *theScript = [[NSAppleScript alloc] initWithSource:source];
+	NSDictionary *theError = [[NSDictionary alloc] init];
+	[theScript executeAndReturnError:&theError];
+	NSLog(@"---> error=%@",[theError description]);
 }
 
 - (void)willUnload {

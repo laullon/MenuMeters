@@ -66,7 +66,6 @@
 	
 } // MenuMeterCPUExtra
 
-- (void)displayAlert;
-
+- (void)displayAlert:(NSString *)type description:(NSString *)description;
 @end
 
