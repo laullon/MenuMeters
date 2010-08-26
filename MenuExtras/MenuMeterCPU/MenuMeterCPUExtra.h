@@ -66,4 +66,7 @@
 	
 } // MenuMeterCPUExtra
 
+- (void)displayAlert;
+
 @end
+

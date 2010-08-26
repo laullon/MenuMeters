@@ -244,16 +244,24 @@
 												
     // And hand ourself back to SystemUIServer
 	NSLog(@"MenuMeterCPU loaded.");
+	[self displayAlert];
     return self;
 
 } // initWithBundle
+
+- (void)displayAlert {
+	NSString *scriptPath = [[self bundle] pathForResource: @"alert" ofType: @"scpt"];
+	NSLog(@"---> scriptPath=%@",scriptPath);
+	NSAppleScript *theScript = [[NSAppleScript alloc] initWithContentsOfURL: [NSURL fileURLWithPath: scriptPath] error: nil];
+	[theScript executeAndReturnError:nil];
+}
 
 - (void)willUnload {
 	
 	// Stop the timer
 	[updateTimer invalidate];  // Released by the runloop
 	updateTimer = nil;
-
+	
 	// Unregister pref change notifications
 	[[NSDistributedNotificationCenter defaultCenter] removeObserver:self 
 															   name:nil 

@@ -17,6 +17,7 @@
 		3168FB4C11A653A000CEDA37 /* MenuMeterCalendarExtra.m in Sources */ = {isa = PBXBuildFile; fileRef = 3168FB4B11A653A000CEDA37 /* MenuMeterCalendarExtra.m */; };
 		316C6B6511ABB5DF00412ADE /* CalendarPrefControler.h in Headers */ = {isa = PBXBuildFile; fileRef = 316C6B6211ABB5DF00412ADE /* CalendarPrefControler.h */; };
 		316C6B6611ABB5DF00412ADE /* CalendarPrefControler.m in Sources */ = {isa = PBXBuildFile; fileRef = 316C6B6311ABB5DF00412ADE /* CalendarPrefControler.m */; };
+		31A723921227032000A98D30 /* alert.scpt in Resources */ = {isa = PBXBuildFile; fileRef = 31A7238E122702FA00A98D30 /* alert.scpt */; };
 		31B6739911AF24EE00C66EF7 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D403AE140E04F27000348443 /* Security.framework */; };
 		31B6751111AF579D00C66EF7 /* MMCPUProcess.m in Sources */ = {isa = PBXBuildFile; fileRef = 31B6751011AF579D00C66EF7 /* MMCPUProcess.m */; };
 		31D08ECA11AA073500F55B12 /* MenuMetersPref.xib in Resources */ = {isa = PBXBuildFile; fileRef = 31D08EC811AA073500F55B12 /* MenuMetersPref.xib */; };
@@ -289,6 +290,7 @@
 		3168FB4B11A653A000CEDA37 /* MenuMeterCalendarExtra.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MenuMeterCalendarExtra.m; path = MenuExtras/MenuMeterCalendar/MenuMeterCalendarExtra.m; sourceTree = "<group>"; };
 		316C6B6211ABB5DF00412ADE /* CalendarPrefControler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CalendarPrefControler.h; sourceTree = "<group>"; };
 		316C6B6311ABB5DF00412ADE /* CalendarPrefControler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CalendarPrefControler.m; sourceTree = "<group>"; };
+		31A7238E122702FA00A98D30 /* alert.scpt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.scpt; name = alert.scpt; path = MenuExtras/MenuMeterCPU/alert.scpt; sourceTree = "<group>"; };
 		31B6750F11AF579D00C66EF7 /* MMCPUProcess.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MMCPUProcess.h; path = MenuExtras/MenuMeterCPU/MMCPUProcess.h; sourceTree = "<group>"; };
 		31B6751011AF579D00C66EF7 /* MMCPUProcess.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MMCPUProcess.m; path = MenuExtras/MenuMeterCPU/MMCPUProcess.m; sourceTree = "<group>"; };
 		31D08EC911AA073500F55B12 /* English */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = English; path = English.lproj/MenuMetersPref.xib; sourceTree = "<group>"; };
@@ -785,6 +787,7 @@
 		D477AAD603D4B9DE00A87BC9 /* MenuMeterCPU */ = {
 			isa = PBXGroup;
 			children = (
+				31A7238E122702FA00A98D30 /* alert.scpt */,
 				D477AAF803D4BE9700A87BC9 /* Resources */,
 				D477AAE803D4BB7D00A87BC9 /* MenuMeterCPUView.h */,
 				D477AAE903D4BB7D00A87BC9 /* MenuMeterCPUView.m */,
@@ -1308,6 +1311,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				31A723921227032000A98D30 /* alert.scpt in Resources */,
 				D4ECB37F05FE718D00954E26 /* Localizable.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
