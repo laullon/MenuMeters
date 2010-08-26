@@ -648,6 +648,16 @@ NSMutableDictionary *process;
 	[[NSColor blackColor] set];
 	[image unlockFocus];
 	
+	if((user+system)>.75){
+		if(cpu_max_time++>30){
+			[self displayAlert:@"CPU" description:@"HIGH CPU USAGE"];
+			cpu_max_time=0;
+		}
+	}else{
+		cpu_max_time=0;
+	}
+
+	
 } // renderThermometerIntoImage:forProcessor:atOffset:
 
 ///////////////////////////////////////////////////////////////

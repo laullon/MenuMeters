@@ -64,6 +64,8 @@
 									*systemColor,
 									*fgMenuThemeColor;
 	
+	int cpu_max_time;
+	
 } // MenuMeterCPUExtra
 
 - (void)displayAlert:(NSString *)type description:(NSString *)description;
