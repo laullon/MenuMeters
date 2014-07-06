@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 45;
+	objectVersion = 46;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -1211,8 +1211,12 @@
 /* Begin PBXProject section */
 		D40DB4A703D25F2100A87BC9 /* Project object */ = {
 			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0600;
+			};
 			buildConfigurationList = D4AFB342087726B20023B640 /* Build configuration list for PBXProject "MenuMeters" */;
-			compatibilityVersion = "Xcode 3.1";
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
 			hasScannedForEncodings = 1;
 			knownRegions = (
 				English,
@@ -1822,82 +1826,29 @@
 		D4AFB343087726B20023B640 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = (
-					x86_64,
-					i386,
-					ppc,
-				);
 				DEAD_CODE_STRIPPING = YES;
 				FRAMEWORK_SEARCH_PATHS = "$(SYSTEM_LIBRARY_DIR)/PrivateFrameworks";
-				GCC_C_LANGUAGE_STANDARD = c99;
 				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
 				GCC_OPTIMIZATION_LEVEL = s;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = MenuMeters.pch;
-				GCC_VERSION = 3.3;
-				"GCC_VERSION[sdk=macosx10.3.9][arch=*]" = 3.3;
-				"GCC_VERSION[sdk=macosx10.4][arch=*]" = 4.0;
-				"GCC_VERSION[sdk=macosx10.5][arch=*]" = 4.0;
-				MACOSX_DEPLOYMENT_TARGET = 10.4;
-				"MACOSX_DEPLOYMENT_TARGET[sdk=macosx10.3.9][arch=*]" = 10.2;
-				"MACOSX_DEPLOYMENT_TARGET[sdk=macosx10.4]" = 10.4;
-				"MACOSX_DEPLOYMENT_TARGET[sdk=macosx10.5][arch=*]" = 10.5;
-				ONLY_ACTIVE_ARCH = YES;
-				PREBINDING = NO;
-				SDKROOT = macosx10.5;
-				"SDKROOT[arch=i386]" = macosx10.5;
-				"SDKROOT[arch=ppc]" = macosx10.5;
-				"SDKROOT[arch=x86_64]" = macosx10.5;
+				SDKROOT = macosx;
 				SEPARATE_STRIP = YES;
-				WARNING_CFLAGS = (
-					"-Wall",
-					"-Werror",
-				);
-				"WARNING_CFLAGS[sdk=macosx10.3.9][arch=*]" = (
-					"-Wall",
-					"-Werror",
-				);
 			};
 			name = Release;
 		};
 		D4CD20430D88E34100481A51 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = (
-					x86_64,
-					i386,
-					ppc,
-				);
 				DEAD_CODE_STRIPPING = NO;
 				FRAMEWORK_SEARCH_PATHS = "$(SYSTEM_LIBRARY_DIR)/PrivateFrameworks";
-				GCC_C_LANGUAGE_STANDARD = c99;
 				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = MenuMeters.pch;
-				GCC_VERSION = 3.3;
-				"GCC_VERSION[sdk=macosx10.3.9][arch=*]" = 3.3;
-				"GCC_VERSION[sdk=macosx10.4][arch=*]" = 4.0;
-				"GCC_VERSION[sdk=macosx10.5][arch=*]" = 4.0;
-				MACOSX_DEPLOYMENT_TARGET = 10.4;
-				"MACOSX_DEPLOYMENT_TARGET[sdk=macosx10.3.9][arch=*]" = 10.2;
-				"MACOSX_DEPLOYMENT_TARGET[sdk=macosx10.4]" = 10.4;
-				"MACOSX_DEPLOYMENT_TARGET[sdk=macosx10.5][arch=*]" = 10.5;
 				ONLY_ACTIVE_ARCH = YES;
-				PREBINDING = NO;
-				SDKROOT = macosx10.5;
-				"SDKROOT[arch=i386]" = macosx10.5;
-				"SDKROOT[arch=ppc]" = macosx10.5;
-				"SDKROOT[arch=x86_64]" = macosx10.5;
+				SDKROOT = macosx;
 				SEPARATE_STRIP = YES;
-				WARNING_CFLAGS = (
-					"-Wall",
-					"-Werror",
-				);
-				"WARNING_CFLAGS[sdk=macosx10.3.9][arch=*]" = (
-					"-Wall",
-					"-Werror",
-				);
 			};
 			name = Debug;
 		};
