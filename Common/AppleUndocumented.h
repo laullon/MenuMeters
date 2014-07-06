@@ -95,7 +95,7 @@ int CoreMenuExtraRemoveMenuExtra(void *menuExtra, int whoCares);
 - (void)setImage:(id)arg1;
 - (id)alternateImage;
 - (void)setAlternateImage:(id)arg1;
-- (void)drawRect:(struct _NSRect)arg1;
+- (void)drawRect:(NSRect)arg1;
 - (void)mouseDown:(id)arg1;
 
 @end
